@@ -5,7 +5,7 @@ const app = getApp()
 Page({
   data: {
     motto: 'Hello World',
-    motto2: 'Hello World',
+    motto3: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
