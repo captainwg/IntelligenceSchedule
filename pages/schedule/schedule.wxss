@@ -1,0 +1,87 @@
+/* pages/schedule/schedule.wxss */
+.page{
+  height: 100%;
+}
+.header{
+  width: 100%;
+  height: 30px;
+  text-align: center;
+  background-color: #3195F5;
+  position: relative;
+}
+.title{
+  height: 2;
+  line-height: 2;
+  color: white;
+}
+.dateButton{
+  width: 100%;
+  height: 1;
+  line-height: 1;
+  padding: 0 30px;
+  background-color: #ebebeb;
+}
+.dateButton .date-btn {
+  width: auto;
+  padding: 0 0.75em;
+  line-height: 1;
+  font-size: 15px;
+  margin: 1%;
+  background-color: white;
+  color: green;
+  border: 1px solid green;
+}
+
+/* 表格代码   */
+.table{
+  border:1px solid #dadada;
+  border-right:0;
+  border-bottom: 0;
+  width: 100%;
+}
+.tr{
+  width:100%;
+  display: flex;
+  justify-content: space-between;
+}
+.th,.td{
+  padding: 10px 0;
+  border-bottom: 1px solid #dadada;
+  border-right: 1px solid #dadada;
+  text-align: center;
+  width: 100%;
+}
+.th{
+  font-weight: 800;
+  font-size: 25rpx;
+  color: #330e0e;
+}
+.td{
+  font-size: 20rpx;
+  color: #ec9480;
+}
+.month{
+  background-color: gray;
+  color: #ebebeb;
+  text-align: center;
+  line-height: 28px;
+}
+.time{
+  color: black;
+}
+.studied{
+  background-color: green;
+  color: white;
+}
+.unfinish{
+  background-color: goldenrod;
+  color: white;
+}
+.unstudied{
+  background-color: blue;
+  color: white;
+}
+.overdue{
+  background-color: gray;
+  color: white;
+}

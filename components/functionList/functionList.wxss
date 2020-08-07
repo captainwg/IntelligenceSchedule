@@ -1,0 +1,40 @@
+/* components/functionList/functionList.wxss */
+.wx-mask {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.wx-dialog {
+  position: fixed;
+  z-index: 5000;
+  width: 30%;
+  max-width: 600rpx;
+  top: 5%;
+  right: 0;
+  /* -webkit-transform: translate(-50%, -50%); */
+  /* transform: translate(-50%, -50%); */
+  background-color: #fff;
+  text-align: center;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.wx-dialog-title {
+  font-size: 18px;
+  padding: 15px 15px 5px;
+}
+
+.wx-dialog-content {
+  padding: 15px 15px 5px;
+  min-height: 40px;
+  font-size: 16px;
+  line-height: 1.3;
+  word-wrap: break-word;
+  word-break: break-all;
+  color: #999;
+}

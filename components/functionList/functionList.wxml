@@ -1,0 +1,18 @@
+<!--components/functionList/functionList.wxml-->
+<view class='wx_dialog_container' hidden="{{!functionList}}">
+    <view class='wx-mask' catchtap='_closeDialog'></view>
+    <view class='wx-dialog'>
+        <view class='wx-dialog-content' catchtap='_openText'>
+        <text>文字识别</text>
+        </view>
+         <view class='wx-dialog-content' catchtap='_openCamera'>
+        <text>图片识别</text>
+        </view>
+         <view class='wx-dialog-content'>
+        <text>课程添加</text>
+        </view>
+         <view class='wx-dialog-content'>
+        <text>手工添加</text>
+        </view>
+    </view>
+</view>

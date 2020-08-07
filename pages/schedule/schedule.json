@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "text":"../../components/text/text",
+    "camera":"../../components/camera/camera",
+    "functionList":"../../components/functionList/functionList"
+  },
+  "navigationBarTitleText": "日程"
+
+}

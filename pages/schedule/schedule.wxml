@@ -1,0 +1,79 @@
+<!--pages/schedule/schedule.wxml-->
+<view class="page">
+  <!-- <view class="header">
+    <text class="title">日程</text>
+  </view> -->
+  <!-- <view class="dateButton">
+   <button class="date-btn" type="primary" size="mini" >日</button>
+   <button class="date-btn" type="primary" size="mini" >周</button>
+   <button class="date-btn" type="primary" size="mini" >年</button>
+  </view> -->
+<button type="primary" bindtap="showDialog"> ClickMe! </button>
+
+ <view class="table">
+      <view class="tr">
+          <view class="th month">{{month}}</view>
+          <view class="th" wx:for="{{dateList}}" wx:key="index">
+          <view>{{dateList[index].day}}</view>
+          <view>{{dateList[index].date}}</view>
+          </view>
+      </view>
+      <view class="tr" wx:for="{{timeList}}" wx:key="index">
+          <view class="td time">{{timeList[index]}}</view>
+          <template is="{{dayData[index].show}}" data="{{...dayData[index]}}"></template>
+          <template is="{{dayData[index].show}}" data="{{...dayData[index]}}"></template>
+          <template is="{{dayData[index].show}}" data="{{...dayData[index]}}"></template>
+          <template is="{{dayData[index].show}}" data="{{...dayData[index]}}"></template>
+          <template is="{{dayData[index].show}}" data="{{...dayData[index]}}"></template>
+          <template is="{{dayData[index].show}}" data="{{...dayData[index]}}"></template>
+          <template is="{{dayData[index].show}}" data="{{...dayData[index]}}"></template>
+      </view>
+    </view>
+</view>
+
+<template name="studied">
+  <view class="td studied">
+    <view>{{itemName}}</view>
+    <view>已学习</view>
+  </view>
+</template>
+<template name="unfinish">
+  <view class="td unfinish">
+    <view>{{itemName}}</view>
+    <view>待完成</view>
+  </view>
+</template>
+<template name="unstudied">
+  <view class="td unstudied">
+    <view>{{itemName}}</view>
+    <view>未学习</view>
+  </view>
+</template>
+<template name="overdue">
+  <view class="td overdue">
+    <view>{{itemName}}</view>
+    <view>已过期</view>
+  </view>
+</template>
+<template name="empty">
+  <view class="td">
+  </view>
+</template>
+
+  <text id='dialog' 
+        cancelText='取消' 
+        confirm='确定' 
+        text="{{text}}"
+        bind:cancelEvent="_cancelEvent" 
+        bind:confirmEvent="_confirmEvent"/>
+  <camera id='dialog' 
+        cancelText='取消' 
+        confirm='确定' 
+        camera="{{camera}}"
+        bind:cancelEvent="_cancelEvent" 
+        bind:confirmEvent="_confirmEvent"/>
+  <functionList id='dialog' 
+        functionList="{{functionList}}"
+        bind:closeDialog="_closeDialog"
+        bind:openText="_openText" 
+        bind:openCamera="_openCamera"/>

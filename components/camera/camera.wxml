@@ -1,0 +1,14 @@
+<!--components/camera/camera.wxml-->
+<view class='wx_dialog_container' hidden="{{!camera}}">
+    <view class='wx-mask'></view>
+    <view class='wx-dialog'>
+        <view class='wx-dialog-title'>{{ title }}</view>
+        <view class='wx-dialog-content'>
+         <textarea class="textarea" placeholder="请输入课程文字内容" value="{{ content }}" auto-focus />
+        </view>
+        <view class='wx-dialog-footer'>
+            <view class='wx-dialog-btn' catchtap='_cancelEvent'>{{ cancelText }}</view>
+            <view class='wx-dialog-btn' catchtap='_confirmEvent'>{{ confirmText }}</view>
+        </view>
+    </view>
+</view>
