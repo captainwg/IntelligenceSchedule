@@ -1,36 +1,36 @@
 <!--lists.wxml-->
-<view class="container">
-<view class="images">
+<view class="container" bindtap="hidePopup">
+<!-- <view class="images">
   <view class="in-img">课程</view>
-</view>
+</view> -->
 
 <view class="search-bar">
-<image class="search-img" src="../../images/search.png" mode="aspectFit"></image>
+<icon class="search-btn" type="search" size="45rpx" color="#838383"></icon>
   <input placeholder='请输入需要查找的课程或关键词'>
   </input>
-  <view class="search-btn">搜索</view>
+  <!-- <view class="search-btn">搜索</view> -->
 </view>
 
 <view class="search-type">
   <label></label>
   <view class="search-btn1">全部</view>
-  <view class="btn search-btn2">类型
-      <view class="select_box" wx:if="{{select}}">
+  <view class="btn search-btn2">时长 v
+      <!-- <view class="select_box" wx:if="{{select}}">
         <view class="select_one" bindtap="mySelect" data-name="已选择">已选择</view>
         <view class="select_one" bindtap="mySelect" data-name="未选择">未选择</view>
-      </view>
+      </view> -->
   </view>
-  <view class="btn search-btn3">状态
-      <view class="select_box" wx:if="{{select}}">
+  <view class="btn search-btn3">价格 v
+      <!-- <view class="select_box" wx:if="{{select}}">
         <view class="select_one" bindtap="mySelect" data-name="已开课">已开课</view>
         <view class="select_one" bindtap="mySelect" data-name="未开课">未开课</view>
-      </view>
+      </view> -->
   </view>
-  <view class="btn search-btn4">排序
-      <view class="select_box" wx:if="{{select}}">
+  <view class="btn search-btn4">时间 v
+      <!-- <view class="select_box" wx:if="{{select}}">
         <view class="select_one" bindtap="mySelect" data-name="正序">正序</view>
         <view class="select_one" bindtap="mySelect" data-name="倒序">倒序</view>
-      </view>
+      </view> -->
   </view>
 </view>
 
@@ -44,17 +44,23 @@
       <view class="right">
         <view class="title">{{title}}</view>
         <view class="desc">{{desc}}</view>
-        <view class='itembox'>评分：
+        <!-- <view class='itembox'>评分：
           <view wx:for="{{imgs}}" wx:key="{{item.id}}" bindtap='select' data-index="{{item.id}}">
             <image class="star" src="{{item.id>starId?src2:src1}}"></image>
           </view>
+        </view> -->
+        <image class="add-img" src="../../images/add.png" mode="aspectFit" data-index="{{index}}" catchtap="onChangeShowState"></image>
+        <view class="{{addshow?'addbtn_show':'addbtn_hide'}}">
+            <view class="addst">
+              <view class="top_add">日程</view>
+              <view class="bot_add">购物车</view>
+            </view>
         </view>
-        <image class="add-img" src="../../images/add.png" mode="aspectFit"></image>
       </view>
     </view>
     <view class="bottom">
       <view class="date">{{cDate}} 开课</view>
-      <view class="time">{{cTime}} 课时</view>
+      <view class="time">{{cTime}} 课时 · </view>
       <view class="hour">{{cHour}} 小时/次</view>
       <view class="amt">￥{{cAMT}}</view>
     </view>
@@ -64,17 +70,8 @@
 
 <!--循环输出列表 begin-->
 <view wx:for="{{newsList}}" class="list-item">
-  <template is="itmes" data="{{...item}}"/>
+  <template is="itmes" data="{{...item, index}}"/>
 </view>
 <!--循环输出列表 end-->
 </view>
 
-<view class="warp">
-
-
-<loading hidden="{{loadHidden}}" bindchange="loadChange">
-    数据加载中...
-</loading>
-
-<view bindtap="loadMore" data-lastid="{{lastid}}" data-isfrist="{{isfrist}}" class="loadMore" style="display:{{moreHidden}}">加载更多</view>
-</view>

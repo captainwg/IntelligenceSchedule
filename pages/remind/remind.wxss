@@ -1,0 +1,46 @@
+.container {
+  /* border: 1rpx solid red; */
+  height: 100vh;
+  padding: 0;
+  background-color: #eee;
+}
+
+.container .bar{
+  width: 94%;
+  /* margin: 20rpx auto; */
+  /* margin: 0 auto; */
+  margin-top: 40rpx;
+  height: 90rpx;
+  display: flex;
+  flex-direction:row;
+  position: relative; 
+}
+
+.container .bar .remind{
+  width: 100%;
+  height: 86rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #4D4D4D;
+  border:solid 0.67px #D8D8D8 ;
+  background-color:white;
+  line-height: 86rpx;
+  padding-left: 25rpx;
+  border-radius: 0.67px;
+  /* position: absolute; */
+  /* align-items: center; */
+  /* padding: 0 20rpx; */
+}
+
+.container .bar .reminder{
+  /* border: 1rpx solid green; */
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #4D4D4D;
+  position: absolute;
+  line-height: 86rpx;
+  /* height: 86rpx; */
+  /* top: 22rpx; */
+  right: 30rpx; 
+  z-index: 100;
+}

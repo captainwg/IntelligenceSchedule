@@ -21,42 +21,41 @@
 
 .container .search-bar{
   width: 100%;
-  height: 45rpx;
+  min-height: 29.33px;
   background-color: white;
   padding-top:20rpx;
   padding-bottom: 30rpx;
   position: relative; 
 }
 
-.container .search-bar .search-img{
+/* .container .search-bar .search-img{
   height: 40rpx;
   width: 40rpx;
   top:25rpx;
   left:42rpx;
   position: absolute;
-}
+} */
 
 .container .search-bar input {
   height: 100%; 
-  font-size: 26rpx;
-  border: 1px solid lightblue;
-  margin-left: 40rpx;
-  margin-right: 40rpx;
-  border-radius: 15rpx;
-  padding-left: 42rpx;  
+  font-family: PingFangSC-Regular;
+  font-size: 22rpx;
+  color: #D8D8D8;
+  border:solid 0.67px #D8D8D8 ;
+  margin-left: 2.8%;
+  margin-right: 2.8%;
+  border-radius: 2.67px;
+  padding-left: 36rpx;  
 }
 .container .search-bar .search-btn{
-  color: lightskyblue;
   position: absolute;
-  right: 60rpx;
+  right: 40rpx;
   top:26rpx;
-  font-size: 28rpx;
-  text-decoration: underline;
 }
 
 .container .search-type{
   width: 100%;
-  min-height: 60rpx;
+  min-height: 29.33px;
   background-color: white;
   margin-top:18rpx;
   position: relative; 
@@ -71,7 +70,9 @@
 
 .container .search-type .search-btn1{
   width:18%;
-  font-size: 26rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  color: #4D4D4D;
   /* position: absolute; */
   top:20rpx;
   /* left: 4%; */
@@ -80,11 +81,11 @@
 }
 
 .container .search-type .search-btn2{
-  border: 1px solid lightskyblue;
-  background:lightskyblue;
   width:18%;
   margin-left: 9%;
-  font-size: 26rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  color: #4D4D4D;
   /* position: absolute; */
   top:20rpx;
   bottom: 20rpx;
@@ -97,10 +98,11 @@
 }
  
 .container .search-type .search-btn3{
-  border: 1px solid grey;
   width:18%;
   margin-left: 9%;
-  font-size: 26rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  color: #4D4D4D;
   /* position: absolute; */
   top:20rpx;
   bottom: 20rpx;
@@ -113,10 +115,11 @@
 }
 
 .container .search-type .search-btn4{
-  border: 1px solid grey;
   width:18%;
   margin-left: 9%;
-  font-size: 26rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  color: #4D4D4D;
   /* position: absolute; */
   top:20rpx;
   bottom: 20rpx;
@@ -168,6 +171,8 @@
 
 .title {
   font-size:28rpx; 
+  font-family: PingFangSC-Semibold;
+  color: #4D4D4D;
   font-weight: bold;
   padding-bottom: 6rpx;  
 }
@@ -181,8 +186,9 @@
   -webkit-box-orient: vertical;
   padding-bottom: 5rpx;
   font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  color: #4D4D4D;
   line-height: 36rpx;
-  color:#aaa;
 }
 .add-img{
   height: 40rpx;
@@ -190,7 +196,51 @@
   position: absolute;
   right: 20rpx;
   bottom: 5rpx;
+  z-index: 100;
 }
+
+.addbtn_show{
+  display: block;
+}
+
+.addbtn_hide{
+  display: none;
+}
+
+.right .addst{
+  border:1rpx solid #2F2012;
+  height: 160rpx;
+  width: 120rpx;
+  position: absolute;
+  right: 75rpx;
+  top:140rpx;
+  z-index: 100;
+  display: flex;
+  flex-direction:column;
+  border-radius: 8rpx
+}
+
+.right .addst .top_add{
+  background-color: #2F2012; 
+  font-size: 25rpx;
+  font-family: PingFangSC-Regular;
+  color: #FEFCF5;
+  flex:1;
+  text-align: center;
+  padding-top: 20rpx;
+  border-bottom: 1rpx solid white;
+}
+
+.right .addst .bot_add{
+  background-color: #2F2012; 
+  flex:1;
+  font-size: 25rpx;
+  font-family: PingFangSC-Regular;
+  color: #FEFCF5;
+  text-align: center;
+  padding-top: 20rpx;
+}
+
 .container .flex-container .bottom{
   background-color: white;
   /* border: 1px solid red; */
@@ -222,29 +272,32 @@
 
 .date {
   font-size: 26rpx;
-  color: #aaa; 
+  font-family: PingFangSC-Regular;
+  color: #4D4D4D;
   bottom: 0;
 }
 
 .time {
   font-size: 26rpx;
-  color: #aaa; 
+  font-family: PingFangSC-Regular;
+  color: #4D4D4D;
   bottom: 0; 
-  padding: 0 36rpx;
+  padding: 0 0 0 36rpx;
 }
 
 .hour {
   font-size: 26rpx;
-  color: #aaa; 
+  font-family: PingFangSC-Regular;
+  color: #4D4D4D;
   bottom: 0;
-  padding: 0 36rpx;
+  padding: 0 0 0 5rpx;
 }
 
 .amt {
   font-size: 26rpx;
-  color:red; 
+  font-family: PingFangSC-Medium;
+  color: #B6200A;
   bottom: 0; 
-  font-weight: bold; 
   position: absolute; 
   right:20rpx;
 }

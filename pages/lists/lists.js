@@ -12,14 +12,7 @@ Page({
         cHour: '3',
         cAMT: '200',
         csimg: '../../images/JS.png',
-        imgs: [{ id: 1 },
-        { id: 2 },
-        { id: 3 },
-        { id: 4 },
-        { id: 5 }],
-        starId: 5,
-        src1: '../../images/star.png',
-        src2: '../../images/grayStar.png',
+        addshow: false,
       },
       { 
         title: '深度学习-从入门到应用', 
@@ -29,14 +22,7 @@ Page({
         cHour: '3',
         cAMT: '200',
         csimg: '../../images/SD.png',
-        imgs: [{ id: 1 },
-        { id: 2 },
-        { id: 3 },
-        { id: 4 },
-        { id: 5 }],
-        starId: 2,
-        src1: '../../images/star.png',
-        src2: '../../images/grayStar.png',
+        addshow: false,
       },
       {
         title: 'JavaScript教程系列',
@@ -46,14 +32,7 @@ Page({
         cHour: '3',
         cAMT: '200',
         csimg: '../../images/JS.png',
-        imgs: [{ id: 1 },
-        { id: 2 },
-        { id: 3 },
-        { id: 4 },
-        { id: 5 }],
-        starId: 5,
-        src1: '../../images/star.png',
-        src2: '../../images/grayStar.png',
+        addshow: false,
       },
       {
         title: '深度学习-从入门到应用',
@@ -63,14 +42,7 @@ Page({
         cHour: '3',
         cAMT: '200',
         csimg: '../../images/SD.png',
-        imgs: [{ id: 1 },
-        { id: 2 },
-        { id: 3 },
-        { id: 4 },
-        { id: 5 }],
-        starId: 2,
-        src1: '../../images/star.png',
-        src2: '../../images/grayStar.png',
+        addshow: false,
       },
     ],
     lastid:0,
@@ -95,8 +67,29 @@ Page({
   },
 
   onLoad: function (options) {
-
   },
+
+  onChangeShowState: function (e) {
+    let index = e.currentTarget.dataset.index
+    var that = this;
+    //var addshow = that.data.newsList[index].addshow;
+    let newsValue = that.data.newsList;
+    newsValue[index].addshow = !newsValue[index].addshow;
+     that.setData({
+      //  newsList[index].addshow :!that.data.newsList[index].addshow
+       newsList: newsValue
+     });
+    // console.log(addshow);
+  }, 
+
+  hidePopup(){
+    let list =this.data.newsList;
+    list.forEach(item => item.addshow = false)
+    this.setData({
+      newsList: list
+    })
+  },
+
   bindShowMsg() {
     this.setData({
       select: !this.data.select

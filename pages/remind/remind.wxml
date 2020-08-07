@@ -1,0 +1,7 @@
+<!--remind.wxml test-->
+<view class="container">
+  <view class="bar" >
+    <view class="remind">  提醒</view>
+    <view class="reminder"  bindtap="bindViewTap">{{reminder}}  ></view>
+  </view>
+</view>
