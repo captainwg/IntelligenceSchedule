@@ -60,6 +60,7 @@ wx.login({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    schedule:[]
   }
 })

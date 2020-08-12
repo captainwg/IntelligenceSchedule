@@ -54,34 +54,55 @@
 .th{
   font-weight: 800;
   font-size: 25rpx;
+  background-color:  #FBD24A;
   color: #330e0e;
 }
 .td{
   font-size: 20rpx;
   color: #ec9480;
+  background-color: #FFFFFF;
 }
 .month{
-  background-color: gray;
-  color: #ebebeb;
+  font-family: PingFangSC-Light;
+  font-size: 70rpx;
+  color: #FDEE9A;
   text-align: center;
-  line-height: 28px;
 }
 .time{
-  color: black;
+  font-family: PingFangSC-Light;
+  font-size: 24rpx;
+  color: #383838;
+  background: #FCFBF7
 }
-.studied{
-  background-color: green;
+.finished{
+  background-color: #39B54A;
   color: white;
 }
-.unfinish{
-  background-color: goldenrod;
+.unfinishClass{
+  background-color: #8B572A;
   color: white;
 }
-.unstudied{
-  background-color: blue;
+.unfinishAffair{
+  background-color: #2EA1FF;
   color: white;
 }
 .overdue{
   background-color: gray;
   color: white;
+}
+.date{
+  font-family: PingFangSC-Light;
+  font-size: 34rpx;
+  color: #FDEE9A;
+}
+.day{
+  font-family: PingFangSC-Light;
+  font-size: 34rpx;
+  margin-top: 10rpx;
+  color: #8B572A;
+}
+.status{
+  background: rgba(255,255,255,0.30);
+  border-radius: 7px;
+  border-radius: 7px;
 }

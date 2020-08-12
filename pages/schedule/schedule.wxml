@@ -8,51 +8,47 @@
    <button class="date-btn" type="primary" size="mini" >周</button>
    <button class="date-btn" type="primary" size="mini" >年</button>
   </view> -->
-<button type="primary" bindtap="showDialog"> ClickMe! </button>
+  <button type="primary" bindtap="showDialog"> ClickMe! </button>
 
  <view class="table">
       <view class="tr">
-          <view class="th month">{{month}}</view>
-          <view class="th" wx:for="{{dateList}}" wx:key="index">
-          <view>{{dateList[index].day}}</view>
-          <view>{{dateList[index].date}}</view>
+          <view class="th month">{{schedule.month}}</view>
+          <view class="th" wx:for="{{dayList}}" wx:key="index">
+          <view class="date">{{dayList[index]}}</view>
+          <view class="day">{{schedule.tableData[index].date}}</view>
           </view>
       </view>
       <view class="tr" wx:for="{{timeList}}" wx:key="index">
           <view class="td time">{{timeList[index]}}</view>
-          <template is="{{dayData[index].show}}" data="{{...dayData[index]}}"></template>
-          <template is="{{dayData[index].show}}" data="{{...dayData[index]}}"></template>
-          <template is="{{dayData[index].show}}" data="{{...dayData[index]}}"></template>
-          <template is="{{dayData[index].show}}" data="{{...dayData[index]}}"></template>
-          <template is="{{dayData[index].show}}" data="{{...dayData[index]}}"></template>
-          <template is="{{dayData[index].show}}" data="{{...dayData[index]}}"></template>
-          <template is="{{dayData[index].show}}" data="{{...dayData[index]}}"></template>
+          <template is="{{schedule.tableData[0].dateData[index].status}}" data="{{...schedule.tableData[0].dateData[index]}}"></template>
+          <template is="{{schedule.tableData[1].dateData[index].status}}" data="{{...schedule.tableData[1].dateData[index]}}"></template>
+          <template is="{{schedule.tableData[2].dateData[index].status}}" data="{{...schedule.tableData[2].dateData[index]}}"></template>
+          <template is="{{schedule.tableData[3].dateData[index].status}}" data="{{...schedule.tableData[3].dateData[index]}}"></template>
+          <template is="{{schedule.tableData[4].dateData[index].status}}" data="{{...schedule.tableData[4].dateData[index]}}"></template>
+          <template is="{{schedule.tableData[5].dateData[index].status}}" data="{{...schedule.tableData[5].dateData[index]}}"></template>
+          <template is="{{schedule.tableData[6].dateData[index].status}}" data="{{...schedule.tableData[6].dateData[index]}}"></template>
       </view>
     </view>
 </view>
 
-<template name="studied">
-  <view class="td studied">
-    <view>{{itemName}}</view>
-    <view>已学习</view>
+<template name="finished">
+  <view class="td finished">
+    <view class="name">{{itemName}}</view>
+    <view class="link">{{link}}</view>
+    <view class="status">已学习</view>
   </view>
 </template>
-<template name="unfinish">
-  <view class="td unfinish">
-    <view>{{itemName}}</view>
-    <view>待完成</view>
+<template name="unfinishClass">
+  <view class="td unfinishClass">
+    <view class="name">{{itemName}}</view>
+    <view class="link">{{link}}</view>
+    <view class="status">待学习</view>
   </view>
 </template>
-<template name="unstudied">
-  <view class="td unstudied">
-    <view>{{itemName}}</view>
-    <view>未学习</view>
-  </view>
-</template>
-<template name="overdue">
-  <view class="td overdue">
-    <view>{{itemName}}</view>
-    <view>已过期</view>
+<template name="unfinishAffair">
+  <view class="td unfinishAffair">
+    <view class="name">{{itemName}}</view>
+    <view class="status">待完成</view>
   </view>
 </template>
 <template name="empty">
