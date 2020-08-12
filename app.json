@@ -2,13 +2,37 @@
   "pages":[
     "pages/schedule/schedule",
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/lists/lists",
+"pages/remind/remind"
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#FBD24A",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar": {  
+    "color": "#a9b7b7",  
+    "selectedColor": "#8B572A",  
+    "borderStyle": "black" ,
+    "list": [{  
+      "selectedIconPath": "images/date.png",  
+      "iconPath": "images/date_unselected.png",  
+      "pagePath": "pages/schedule/schedule",  
+      "text": "日程"  
+    }, {  
+      "selectedIconPath": "images/class.png",  
+      "iconPath": "images/class_unselected.png",  
+      "pagePath": "pages/lists/lists",  
+      "text": "课程"  
+    },{  
+      "selectedIconPath": "images/center.png",  
+      "iconPath": "images/center_unselected.png",  
+      "pagePath": "pages/remind/remind",  
+      "text": "个人"  
+    }
+    ]  
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"

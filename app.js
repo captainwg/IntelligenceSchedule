@@ -7,11 +7,37 @@ App({
     wx.setStorageSync('logs', logs)
 
     // 登录
-    wx.login({
-      success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
+wx.login({
+  success: res => {
+      // 发送 res.code 到后台换取 openId, sessionKey, unionId
+      // console.log(res)
+      if (res.code) {
+          //发起网络请求
+          wx.request({
+              url: 'https://542124141.xyz/login',
+              method: 'POST',
+              data: {
+                  // x: '',
+                  // y: ''
+                  code: res.code //将code发给后台拿token
+              },
+              header: {
+                  'content-type': 'application/json' // 默认值
+              },
+              success: function(res) {
+                  // 存token
+                  console.log('openid=' + res.data.openid)
+                  wx.setStorage({
+                    data: res.data.openid,
+                    key: 'openid',
+                  }); //拿到后将openid存入全局变量  以便其他页面使用
+              }
+          })
+      } else {
+          console.log('获取用户登录态失败！' + res.errMsg)
       }
-    })
+  }
+})
     // 获取用户信息
     wx.getSetting({
       success: res => {
