@@ -7,8 +7,8 @@
          <textarea class="textarea" placeholder="请输入课程文字内容" value="{{ content }}" auto-focus />
         </view>
         <view class='wx-dialog-footer'>
-            <view class='wx-dialog-btn' catchtap='_cancelEvent'>{{ cancelText }}</view>
-            <view class='wx-dialog-btn' catchtap='_confirmEvent'>{{ confirmText }}</view>
+            <button class="confirm" type="primary" catchtap='_confirmEvent' size="mini">{{ confirmText }}</button>
+            <button class="cancel" type="primary" catchtap='_cancelEvent' size="mini">{{ cancelText }}</button>
         </view>
     </view>
 </view>
