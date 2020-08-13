@@ -20,39 +20,39 @@
       </view>
       <view class="tr" wx:for="{{timeList}}" wx:key="index">
           <view class="td time">{{timeList[index]}}</view>
-          <template is="{{schedule.tableData[0].dateData[index].status}}" data="{{...schedule.tableData[0].dateData[index]}}"></template>
-          <template is="{{schedule.tableData[1].dateData[index].status}}" data="{{...schedule.tableData[1].dateData[index]}}"></template>
-          <template is="{{schedule.tableData[2].dateData[index].status}}" data="{{...schedule.tableData[2].dateData[index]}}"></template>
-          <template is="{{schedule.tableData[3].dateData[index].status}}" data="{{...schedule.tableData[3].dateData[index]}}"></template>
-          <template is="{{schedule.tableData[4].dateData[index].status}}" data="{{...schedule.tableData[4].dateData[index]}}"></template>
-          <template is="{{schedule.tableData[5].dateData[index].status}}" data="{{...schedule.tableData[5].dateData[index]}}"></template>
-          <template is="{{schedule.tableData[6].dateData[index].status}}" data="{{...schedule.tableData[6].dateData[index]}}"></template>
+          <template is="{{schedule.tableData[0].dateData[index].status}}" data="{{...schedule.tableData[0].dateData[index],...schedule.tableData[0],index}}"></template>
+          <template is="{{schedule.tableData[1].dateData[index].status}}" data="{{...schedule.tableData[1].dateData[index],...schedule.tableData[1],index}}"></template>
+          <template is="{{schedule.tableData[2].dateData[index].status}}" data="{{...schedule.tableData[2].dateData[index],...schedule.tableData[2],index}}"></template>
+          <template is="{{schedule.tableData[3].dateData[index].status}}" data="{{...schedule.tableData[3].dateData[index],...schedule.tableData[3],index}}"></template>
+          <template is="{{schedule.tableData[4].dateData[index].status}}" data="{{...schedule.tableData[4].dateData[index],...schedule.tableData[4],index}}"></template>
+          <template is="{{schedule.tableData[5].dateData[index].status}}" data="{{...schedule.tableData[5].dateData[index],...schedule.tableData[5],index}}"></template>
+          <template is="{{schedule.tableData[6].dateData[index].status}}" data="{{...schedule.tableData[6].dateData[index],...schedule.tableData[6],index}}"></template>
       </view>
     </view>
 </view>
 
 <template name="finished">
-  <view class="td finished">
+  <view class="td finished" data-row="{{index}}" data-col='{{date}}' bindtap='getCurrentDateData'>
     <view class="name">{{itemName}}</view>
     <view class="link">{{link}}</view>
     <view class="status">已学习</view>
   </view>
 </template>
 <template name="unfinishClass">
-  <view class="td unfinishClass">
+  <view class="td unfinishClass" data-row="{{index}}" data-col='{{date}}' bindtap='getCurrentDateData'>
     <view class="name">{{itemName}}</view>
     <view class="link">{{link}}</view>
     <view class="status">待学习</view>
   </view>
 </template>
 <template name="unfinishAffair">
-  <view class="td unfinishAffair">
+  <view class="td unfinishAffair" data-row="{{index}}" data-col='{{date}}' bindtap='getCurrentDateData'>
     <view class="name">{{itemName}}</view>
     <view class="status">待完成</view>
   </view>
 </template>
 <template name="empty">
-  <view class="td">
+  <view class="td"  data-row="{{index}}" data-col='{{date}}' bindtap='getCurrentDateData'>
   </view>
 </template>
 

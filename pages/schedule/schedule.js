@@ -154,14 +154,39 @@ Page({
     },
     text: false,
     camera:false,
-    functionList: false
+    functionList: false,
+    currentDate:{}
   },
   showDialog() {
     this.setData({
         functionList: true
     })
   },
-
+  getCurrentDateData(e){
+    let row = e.currentTarget.dataset.row
+    let col = e.currentTarget.dataset.col
+    this.data.schedule.tableData.forEach((item)=>{
+      if(item.date===col){
+        this.setData({
+          currentDate:item.dateData[row]
+        })
+        console.log(this.data.currentDate)
+      }
+    })
+  },
+  setCurrentDateData(e){
+    let row = e.currentTarget.dataset.row
+    let col = e.currentTarget.dataset.col
+    this.data.schedule.tableData.forEach((item,index)=>{
+      if(item.date===col){
+        let data = 'schedule.tableData['+index+'].dateData['+row+']'
+        this.setData({
+          data:this.data.currentDate
+        })
+        console.log(this.data.currentDate)
+      }
+    })
+  },
   showCharacter() {
     this.setData({
       functionList: false
