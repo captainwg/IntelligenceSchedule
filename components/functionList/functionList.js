@@ -29,6 +29,14 @@ Component({
    * 组件的方法列表
    */
   methods: {
+    toClass(){
+      wx.switchTab({
+        url: '/pages/lists/lists'
+      })
+      this.setData({
+        functionList: false
+      })
+    },
     _openText() {
       //触发打开页面回调
       this.triggerEvent("openText")

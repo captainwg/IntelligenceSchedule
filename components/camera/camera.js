@@ -53,6 +53,22 @@ Component({
   _confirmEvent() {
       //触发成功回调
       this.triggerEvent("confirmEvent");   //confirmEvent由调用方声明和定义，在调用方 bind:confirmEvent 来声明，在js中定义函数
+  },
+  takePhoto() {
+    const ctx = wx.createCameraContext()
+    console.log(ctx)
+    ctx.takePhoto({
+      quality: 'high',
+      success: (res) => {
+        console.log(res)
+        this.setData({
+          src: res.tempImagePath
+        })
+      }
+    })
+  },
+  error(e) {
+    console.log(e.detail)
   }
   }
 })
