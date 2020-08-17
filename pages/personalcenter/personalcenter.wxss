@@ -1,0 +1,99 @@
+Page{
+  background-color: #f4f4f4;
+}
+.person{
+  height: 240rpx;
+  background:#FBD24A;
+  display: flex;
+  flex-direction: row;
+}
+.head{
+  margin-left:64rpx; 
+  margin-top:32rpx;
+}
+.account{
+  color: #4D4D4D;
+  margin-left: 30rpx;
+  margin-top: 68rpx;
+}
+.name{
+  font-size: 37.32rpx;
+}
+.sign_text{
+  font-size: 29.32rpx;
+  color: #4D4D4D;
+  margin-top: 5rpx;
+  /* border:2rpx solid #9b9b9b;
+  border-radius: 40rpx; */
+  text-align: left;
+}
+.set{
+  margin-top: 108rpx;
+  margin-left: 280rpx;
+}
+.set image{
+  width: 22.68rpx;
+  height: 53.32rpx;
+}
+.item{
+  background-color: #ffffff;
+  display: flex;
+  margin:0 auto;
+  flex-direction: row;
+  height: 100rpx;
+  align-items: center;
+  width: 92%;
+  border-top:0.33px solid #CCCCCC;
+  border-right:0.33px solid #CCCCCC;
+  border-left: 0.33px solid #CCCCCC;
+
+  /* border-radius: 20rpx; */
+  /* box-shadow:0rpx  8rpx  8rpx 3rpx rgb(221, 220, 220); */
+}
+.item-top{
+  margin-top: 20rpx;
+}
+
+.icon{
+  width: 90rpx;
+  text-align: center;
+  margin-top: 16rpx;
+}
+.itemname{
+  color: #4D4D4D;
+  width: 40%;
+  font-size: 32rpx;
+}
+.hr{
+  /* 底部黑线 */
+  height: 2rpx;
+  background-color: #000000;
+  width: 92%;
+  margin: 0 auto;
+  opacity: 0.2;
+}
+.remark{
+  font-weight: normal;
+  margin-top:10rpx; 
+}
+.right{
+  color: #707075;
+  width: 40%;
+  text-align: right;
+}
+.desc_img image{
+  margin-top: 16rpx;
+  width: 90rpx;
+  height: 90rpx;
+}
+.icon image{
+  height: 62rpx;
+  width: 62rpx
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+ height: 128rpx;
+ margin: 20rpx;
+ border-radius: 50%;
+}

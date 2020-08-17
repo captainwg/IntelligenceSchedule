@@ -4,7 +4,8 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/lists/lists",
-"pages/remind/remind"
+"pages/remind/remind",
+"pages/personalcenter/personalcenter"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -29,7 +30,7 @@
     },{  
       "selectedIconPath": "images/center.png",  
       "iconPath": "images/center_unselected.png",  
-      "pagePath": "pages/remind/remind",  
+      "pagePath": "pages/personalcenter/personalcenter",  
       "text": "个人"  
     }
     ]  

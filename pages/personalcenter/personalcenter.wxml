@@ -1,0 +1,27 @@
+<!--pages/personalcenter/personalcenter.wxml-->
+<view class='person'>
+  <view class='head'>
+    <!-- <image src="/images/头像.png" style='width:104rpx;height:104rpx;'></image> -->
+<image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image></view>
+  <view class='account' style='width:100%'>
+    <view class="name">课表代言人</view>
+    <view class='sign_text' >我坚强勇敢、努力向上、积极乐观。</view>
+  </view>
+  <!-- <view class='set'><image src='/images/set.png'></image></view> -->
+</view>
+
+<view class='contain'>
+  <view class='item item-top'>
+    <view class='icon'><image src='/images/购物车.png' style='width:32rpx;height:32rpx;'></image></view>
+    <view class='itemname'>
+      <view>购物车</view>
+    </view>
+  </view>
+  <view class='item' >
+    <view class='icon'><image src='/images/设置.png' style='width:32rpx;height:32rpx;'></image></view>
+    <view class='itemname'>
+      <view>设置</view>
+    </view>
+  </view> 
+  <view class='hr'></view>
+</view>

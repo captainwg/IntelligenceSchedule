@@ -38,6 +38,23 @@ wx.login({
       }
   }
 })
+let tmpIds = [
+  "AuBm68rZSfwYpD5rfPmVzbASIAqLQpYMeljMuYfcAd4"
+  ];
+  wx.requestSubscribeMessage({
+    tmplIds: tmpIds,
+    success (res) {
+     let acceptTmpList = [];
+     for(let i = 0; i < tmpIds.length; i++ )
+     {
+        let tmpId = tmpIds[i];
+        if(res[tmpId] == "accept")
+        {
+          acceptTmpList.push(tmpId);
+        }
+      }
+    }
+  })
     // 获取用户信息
     wx.getSetting({
       success: res => {
