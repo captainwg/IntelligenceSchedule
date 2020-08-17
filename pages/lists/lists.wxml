@@ -49,11 +49,12 @@
             <image class="star" src="{{item.id>starId?src2:src1}}"></image>
           </view>
         </view> -->
+        <image class="add-img-top" src="{{isClick?'../../images/star.png':'../../images/grayStar.png'}}" mode="aspectFit" data-index="{{index}}" bindtap="havesave"></image>
         <image class="add-img" src="../../images/add.png" mode="aspectFit" data-index="{{index}}" catchtap="onChangeShowState"></image>
         <view class="{{addshow?'addbtn_show':'addbtn_hide'}}">
             <view class="addst">
               <view class="top_add">日程</view>
-              <view class="bot_add">购物车</view>
+              <view class="bot_add">收藏</view>
             </view>
         </view>
       </view>

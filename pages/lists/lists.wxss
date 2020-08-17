@@ -199,6 +199,15 @@
   z-index: 100;
 }
 
+.add-img-top{
+  height: 40rpx;
+  width:40rpx;
+  position: absolute;
+  right: 20rpx;
+  top: 15rpx;
+  z-index: 100;
+}
+
 .addbtn_show{
   display: block;
 }

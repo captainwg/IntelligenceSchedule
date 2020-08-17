@@ -7,42 +7,46 @@ Page({
       {
         title: 'JavaScript教程系列', 
         desc: 'javascript是弱类型，基于原型的语言，常用于网页客户端编程，是网页设计最为常用的编程',
-        cDate: '2020-01-22',
-        cTime: '20',
-        cHour: '3',
+        cDate: '2020-09-11',
+        cTime: '2',
+        cHour: '1',
         cAMT: '200',
         csimg: '../../images/JS.png',
         addshow: false,
+        isClick:false,
       },
       { 
         title: '深度学习-从入门到应用', 
         desc: '从入门到实战摒弃了枯燥的理论推导,以大量实战应用案例及知识模块等内容帮助机器学习领域的初、中级程序员踏实通过深度学习的技术',
-        cDate: '2020-01-22',
-        cTime: '20',
-        cHour: '3',
-        cAMT: '200',
+        cDate: '2020-09-12',
+        cTime: '3',
+        cHour: '1',
+        cAMT: '340',
         csimg: '../../images/SD.png',
         addshow: false,
+        isClick:false,
       },
       {
         title: 'JavaScript教程系列',
         desc: 'javascript是弱类型，基于原型的语言，常用于网页客户端编程，是网页设计最为常用的编程',
-        cDate: '2020-01-22',
-        cTime: '20',
-        cHour: '3',
-        cAMT: '200',
+        cDate: '2020-08-22',
+        cTime: '2',
+        cHour: '1',
+        cAMT: '180',
         csimg: '../../images/JS.png',
         addshow: false,
+        isClick:false,
       },
       {
         title: '深度学习-从入门到应用',
         desc: '从入门到实战摒弃了枯燥的理论推导,以大量实战应用案例及知识模块等内容帮助机器学习领域的初、中级程序员踏实通过深度学习的技术',
-        cDate: '2020-01-22',
-        cTime: '20',
-        cHour: '3',
-        cAMT: '200',
+        cDate: '2020-08-28',
+        cTime: '3',
+        cHour: '1',
+        cAMT: '160',
         csimg: '../../images/SD.png',
         addshow: false,
+        isClick:false,
       },
     ],
     lastid:0,
@@ -102,4 +106,15 @@ Page({
       select: false
     })
   },
+
+  havesave(e) {
+    let index = e.currentTarget.dataset.index
+    var that = this;
+    let newsValue = that.data.newsList;
+    newsValue[index].isClick = !newsValue[index].isClick;
+    that.setData({
+      //  newsList[index].addshow :!that.data.newsList[index].addshow
+       newsList: newsValue
+     });
+  }
 })

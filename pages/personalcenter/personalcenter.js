@@ -13,6 +13,21 @@ wx.getUserInfo({
       hasUserInfo: true
     })
   }
-})
+})},
+
+
+//事件处理函数
+
+bindViewTap1:function(){
+  wx.navigateTo({
+    url: '../favorite/favorite'
+  })
+},
+
+bindViewTap2:function(){
+  wx.navigateTo({
+    url: '../remind/remind'
+  })
 }
+
 })

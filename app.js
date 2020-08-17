@@ -78,6 +78,8 @@ let tmpIds = [
   },
   globalData: {
     userInfo: null,
-    schedule:[]
+    schedule:[],
+    selectedValue:'无'
+
   }
 })

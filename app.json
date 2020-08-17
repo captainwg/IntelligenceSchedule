@@ -1,11 +1,13 @@
 {
   "pages":[
-    "pages/schedule/schedule",
-    "pages/index/index",
-    "pages/logs/logs",
     "pages/lists/lists",
-"pages/remind/remind",
-"pages/personalcenter/personalcenter"
+    "pages/schedule/schedule",
+    "pages/favorite/favorite",
+    "pages/timeset/timeset",
+    "pages/index/index",
+    "pages/remind/remind",
+    "pages/personalcenter/personalcenter",
+    "pages/logs/logs"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -36,5 +38,8 @@
     ]  
   },
   "style": "v2",
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "useExtendedLib": {
+   "weui": true
+  }
 }
