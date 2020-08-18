@@ -122,3 +122,9 @@
   min-height: 50px;
   min-width: 50px;
 }
+movable-view{
+  top: 1000rpx;
+  left: 1000rpx;
+  bottom: 0;
+  right: 0;
+}

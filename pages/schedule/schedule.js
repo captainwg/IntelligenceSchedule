@@ -1,4 +1,6 @@
 // pages/schedule/schedule.js
+var startX,endX;
+var moveFlag=true
 Page({
 
   /**
@@ -98,7 +100,7 @@ Page({
             {type:'',itemName:'',user:'',time:'09:00',class:'',link:'',affair:'',location:'',status:'empty'},
             {type:'',itemName:'',user:'',time:'10:00',class:'',link:'',affair:'',location:'',status:'empty'},
             {type:'',itemName:'',user:'',time:'11:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'affair',itemName:'做饭',user:'',time:'11:00',class:'',link:'',affair:'',location:'',status:'unfinishAffair'},
+            {type:'affair',itemName:'做饭',user:'',time:'12:00',class:'',link:'',affair:'',location:'',status:'unfinishAffair'},
             {type:'',itemName:'',user:'',time:'13:00',class:'',link:'',affair:'',location:'',status:'empty'},
             {type:'',itemName:'',user:'',time:'14:00',class:'',link:'',affair:'',location:'',status:'empty'},
             {type:'',itemName:'',user:'',time:'15:00',class:'',link:'',affair:'',location:'',status:'empty'},
@@ -171,6 +173,10 @@ Page({
           currentDate:item.dateData[row]
         })
         console.log(this.data.currentDate)
+        wx.setStorage({
+          data: this.data.schedule,
+          key: 'schedule',
+        })
       }
     })
   },
@@ -225,11 +231,336 @@ Page({
       functionList: false
     })
   },
+  touchStart:function(e){
+    startX=e.touches[0].pageX
+    moveFlag=true
+  },
+  touchMove:function(e){
+    endX=e.touches[0].pageX
+    if(endX-startX>100){
+      console.log("move right")
+      this.move2Right()
+      moveFlag=false
+    }
+    if(startX-endX>100){
+      console.log("move left")
+      this.move2Left()
+      moveFlag=false
+    }
+  },
+  touchEnd:function(e){
+    moveFlag = true
+  },
+  move2Right(){
+    var that = this
+    that.setData({
+      schedule:{
+        month:'3',
+        tableData:[
+          {
+            date:'14',
+            dateData:[
+              {type:'',itemName:'',user:'',time:'07:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'08:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'09:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'10:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'11:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'12:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'13:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'14:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'class',itemName:'语文',user:'李老师',time:'15:00',class:'',link:'',affair:'',location:'',status:'finished'},
+              {type:'',itemName:'',user:'',time:'16:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'17:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'18:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'19:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'20:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'21:00',class:'',link:'',affair:'',location:'',status:'empty'}
+            ]
+          },
+          {
+            date:'15',
+            dateData:[
+              {type:'',itemName:'',user:'',time:'07:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'08:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'09:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'10:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'class',itemName:'语文',user:'李老师',time:'11:00',class:'',link:'',affair:'',location:'',status:'unfinishClass'},
+              {type:'',itemName:'',user:'',time:'12:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'13:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'14:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'15:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'16:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'17:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'18:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'19:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'20:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'21:00',class:'',link:'',affair:'',location:'',status:'empty'}
+            ]
+          },
+          {
+            date:'16',
+            dateData:[
+              {type:'',itemName:'',user:'',time:'07:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'08:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'09:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'10:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'11:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'12:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'13:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'14:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'15:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'16:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'17:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'18:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'19:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'20:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'21:00',class:'',link:'',affair:'',location:'',status:'empty'}
+            ]
+          },
+          {
+            date:'17',
+            dateData:[
+              {type:'',itemName:'',user:'',time:'07:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'08:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'09:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'10:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'11:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'12:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'13:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'14:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'15:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'16:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'17:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'18:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'19:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'20:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'21:00',class:'',link:'',affair:'',location:'',status:'empty'}
+            ]
+          },
+          {
+            date:'18',
+            dateData:[
+              {type:'',itemName:'',user:'',time:'07:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'08:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'09:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'10:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'11:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'affair',itemName:'做饭',user:'',time:'12:00',class:'',link:'',affair:'',location:'',status:'unfinishAffair'},
+              {type:'',itemName:'',user:'',time:'13:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'14:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'15:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'16:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'17:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'18:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'19:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'20:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'21:00',class:'',link:'',affair:'',location:'',status:'empty'}
+            ]
+          },
+          {
+            date:'19',
+            dateData:[
+              {type:'',itemName:'',user:'',time:'07:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'08:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'09:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'10:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'11:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'12:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'13:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'14:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'15:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'16:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'17:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'18:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'19:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'20:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'21:00',class:'',link:'',affair:'',location:'',status:'empty'}
+            ]
+          },
+          {
+            date:'20',
+            dateData:[
+              {type:'',itemName:'',user:'',time:'07:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'08:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'09:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'10:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'11:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'12:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'13:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'14:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'15:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'16:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'17:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'18:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'19:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'20:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'21:00',class:'',link:'',affair:'',location:'',status:'empty'}
+            ]
+          }
+        ]
+      },
+    })
+  },
+  move2Left(){
+    var that = this
+    that.setData({
+      schedule:{
+        month:'3',
+        tableData:[
+          {
+            date:'21',
+            dateData:[
+              {type:'',itemName:'',user:'',time:'07:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'08:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'09:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'10:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'11:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'12:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'13:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'14:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'class',itemName:'语文',user:'李老师',time:'15:00',class:'',link:'',affair:'',location:'',status:'finished'},
+              {type:'',itemName:'',user:'',time:'16:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'17:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'18:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'19:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'20:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'21:00',class:'',link:'',affair:'',location:'',status:'empty'}
+            ]
+          },
+          {
+            date:'22',
+            dateData:[
+              {type:'',itemName:'',user:'',time:'07:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'08:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'09:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'10:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'class',itemName:'语文',user:'李老师',time:'11:00',class:'',link:'',affair:'',location:'',status:'unfinishClass'},
+              {type:'',itemName:'',user:'',time:'12:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'13:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'14:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'15:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'16:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'17:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'18:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'19:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'20:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'21:00',class:'',link:'',affair:'',location:'',status:'empty'}
+            ]
+          },
+          {
+            date:'23',
+            dateData:[
+              {type:'',itemName:'',user:'',time:'07:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'08:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'09:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'10:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'11:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'12:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'13:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'14:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'15:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'16:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'17:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'18:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'19:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'20:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'21:00',class:'',link:'',affair:'',location:'',status:'empty'}
+            ]
+          },
+          {
+            date:'24',
+            dateData:[
+              {type:'',itemName:'',user:'',time:'07:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'08:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'09:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'10:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'11:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'12:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'13:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'14:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'15:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'16:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'17:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'18:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'19:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'20:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'21:00',class:'',link:'',affair:'',location:'',status:'empty'}
+            ]
+          },
+          {
+            date:'25',
+            dateData:[
+              {type:'',itemName:'',user:'',time:'07:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'08:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'09:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'10:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'11:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'affair',itemName:'做饭',user:'',time:'12:00',class:'',link:'',affair:'',location:'',status:'unfinishAffair'},
+              {type:'',itemName:'',user:'',time:'13:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'14:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'15:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'16:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'17:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'18:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'19:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'20:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'21:00',class:'',link:'',affair:'',location:'',status:'empty'}
+            ]
+          },
+          {
+            date:'26',
+            dateData:[
+              {type:'',itemName:'',user:'',time:'07:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'08:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'09:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'10:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'11:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'12:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'13:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'14:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'15:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'16:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'17:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'18:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'19:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'20:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'21:00',class:'',link:'',affair:'',location:'',status:'empty'}
+            ]
+          },
+          {
+            date:'27',
+            dateData:[
+              {type:'',itemName:'',user:'',time:'07:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'08:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'09:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'10:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'11:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'12:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'13:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'14:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'15:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'16:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'17:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'18:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'19:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'20:00',class:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'21:00',class:'',link:'',affair:'',location:'',status:'empty'}
+            ]
+          }
+        ]
+      },
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let value =wx.getStorageSync('schedule')
+    if(value){
+      this.setData({
+        schedule:value
+      })
+    }
   },
 
   /**
