@@ -7,6 +7,9 @@ Page({
    * 页面的初始数据
    */
   data: {
+    // 两个设置
+    courseFlag: false,
+    dateFlag:false,
     timeList:['07:00','08:00','09:00','10:00','11:00','12:00','13:00','14:00','15:00','16:00','17:00','18:00','19:00','20:00','21:00'],
     dayList:['一','二','三','四','五','六','日'],
     schedule:{
@@ -15,141 +18,141 @@ Page({
         {
           date:'14',
           dateData:[
-            {type:'',itemName:'',user:'',time:'07:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'08:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'09:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'10:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'11:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'12:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'13:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'14:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'class',itemName:'语文',user:'李老师',time:'15:00',class:'',link:'',affair:'',location:'',status:'finished'},
-            {type:'',itemName:'',user:'',time:'16:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'17:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'18:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'19:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'20:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'21:00',class:'',link:'',affair:'',location:'',status:'empty'}
+            {type:'',itemName:'',user:'',time:'07:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'08:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'09:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'10:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'11:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'12:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'13:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'14:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'course',itemName:'数学',user:'王老师',time:'15:00',course:'',link:'',affair:'',location:'',status:'finished'},
+            {type:'course',itemName:'数学',user:'王老师',time:'16:00',course:'',link:'',affair:'',location:'',status:'finished'},
+            {type:'',itemName:'',user:'',time:'17:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'18:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'19:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'20:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'21:00',course:'',link:'',affair:'',location:'',status:'empty'}
           ]
         },
         {
           date:'15',
           dateData:[
-            {type:'',itemName:'',user:'',time:'07:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'08:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'09:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'10:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'class',itemName:'语文',user:'李老师',time:'11:00',class:'',link:'',affair:'',location:'',status:'unfinishClass'},
-            {type:'',itemName:'',user:'',time:'12:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'13:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'14:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'15:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'16:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'17:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'18:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'19:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'20:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'21:00',class:'',link:'',affair:'',location:'',status:'empty'}
+            {type:'',itemName:'',user:'',time:'07:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'08:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'09:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'10:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'class',itemName:'语文',user:'李老师',time:'11:00',course:'',link:'',affair:'',location:'',status:'unfinishClass'},
+            {type:'',itemName:'',user:'',time:'12:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'13:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'14:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'15:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'16:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'17:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'18:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'19:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'20:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'21:00',course:'',link:'',affair:'',location:'',status:'empty'}
           ]
         },
         {
           date:'16',
           dateData:[
-            {type:'',itemName:'',user:'',time:'07:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'08:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'09:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'10:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'11:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'12:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'13:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'14:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'15:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'16:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'17:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'18:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'19:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'20:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'21:00',class:'',link:'',affair:'',location:'',status:'empty'}
+            {type:'',itemName:'',user:'',time:'07:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'08:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'09:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'10:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'11:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'12:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'13:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'14:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'15:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'16:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'17:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'18:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'19:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'20:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'21:00',course:'',link:'',affair:'',location:'',status:'empty'}
           ]
         },
         {
           date:'17',
           dateData:[
-            {type:'',itemName:'',user:'',time:'07:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'08:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'09:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'10:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'11:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'12:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'13:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'14:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'15:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'16:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'17:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'18:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'19:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'20:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'21:00',class:'',link:'',affair:'',location:'',status:'empty'}
+            {type:'',itemName:'',user:'',time:'07:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'08:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'09:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'10:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'11:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'12:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'13:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'14:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'15:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'16:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'17:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'18:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'19:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'20:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'21:00',course:'',link:'',affair:'',location:'',status:'empty'}
           ]
         },
         {
           date:'18',
           dateData:[
-            {type:'',itemName:'',user:'',time:'07:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'08:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'09:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'10:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'11:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'affair',itemName:'做饭',user:'',time:'12:00',class:'',link:'',affair:'',location:'',status:'unfinishAffair'},
-            {type:'',itemName:'',user:'',time:'13:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'14:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'15:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'16:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'17:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'18:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'19:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'20:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'21:00',class:'',link:'',affair:'',location:'',status:'empty'}
+            {type:'',itemName:'',user:'',time:'07:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'08:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'09:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'10:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'11:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'affair',itemName:'做饭',user:'',time:'11:00',course:'',link:'',affair:'',location:'',status:'unfinishAffair'},
+            {type:'',itemName:'',user:'',time:'13:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'14:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'15:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'16:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'17:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'18:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'19:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'20:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'21:00',course:'',link:'',affair:'',location:'',status:'empty'}
           ]
         },
         {
           date:'19',
           dateData:[
-            {type:'',itemName:'',user:'',time:'07:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'08:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'09:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'10:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'11:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'12:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'13:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'14:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'15:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'16:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'17:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'18:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'19:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'20:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'21:00',class:'',link:'',affair:'',location:'',status:'empty'}
+            {type:'',itemName:'',user:'',time:'07:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'08:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'09:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'10:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'11:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'12:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'13:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'14:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'15:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'16:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'17:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'18:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'19:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'20:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'21:00',course:'',link:'',affair:'',location:'',status:'empty'}
           ]
         },
         {
           date:'20',
           dateData:[
-            {type:'',itemName:'',user:'',time:'07:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'08:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'09:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'10:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'11:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'12:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'13:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'14:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'15:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'16:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'17:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'18:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'19:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'20:00',class:'',link:'',affair:'',location:'',status:'empty'},
-            {type:'',itemName:'',user:'',time:'21:00',class:'',link:'',affair:'',location:'',status:'empty'}
+            {type:'',itemName:'',user:'',time:'07:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'08:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'09:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'10:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'11:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'12:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'13:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'14:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'15:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'16:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'17:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'18:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'19:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'20:00',course:'',link:'',affair:'',location:'',status:'empty'},
+            {type:'',itemName:'',user:'',time:'21:00',course:'',link:'',affair:'',location:'',status:'empty'}
           ]
         }
       ]
@@ -157,22 +160,46 @@ Page({
     text: false,
     camera:false,
     functionList: false,
-    currentDate:{}
+    currentDate:{},
+    // orderInfo:{}
   },
   showDialog() {
     this.setData({
         functionList: true
     })
   },
-  getCurrentDateData(e){
+  onReady: function () {
+    //获得组件
+    this.edit = this.selectComponent("#course");
+    this.edit1 = this.selectComponent("#date");
+  },
+
+  showDate(e){
     let row = e.currentTarget.dataset.row
     let col = e.currentTarget.dataset.col
     this.data.schedule.tableData.forEach((item)=>{
       if(item.date===col){
         this.setData({
-          currentDate:item.dateData[row]
+          currentDate:item.dateData[row],     
         })
+        // if(this.data.currentDate.type==="class")
+        //   {
+        //     this.edit.showCourse()            
+        //   }
+        // else{
+        //     this.edit1.showDate()
+        // }
+        // 判断课程class 日程affair
+        
+        wx.setStorage({
+          data: this.data.currentDate,
+          key: 'currentDate',
+        })
+        this.edit1.showDate()
         console.log(this.data.currentDate)
+//传给组件
+
+//存储数据
         wx.setStorage({
           data: this.data.schedule,
           key: 'schedule',
@@ -180,6 +207,47 @@ Page({
       }
     })
   },
+  showCourse(e){
+    let row = e.currentTarget.dataset.row
+    let col = e.currentTarget.dataset.col
+    this.data.schedule.tableData.forEach((item)=>{
+      if(item.date===col){
+        this.setData({
+          currentDate:item.dateData[row],          
+        })
+        // this.edit.showData(currentDate)
+        console.log(this.data.currentDate)
+        wx.setStorage({
+          data: this.data.currentDate,
+          key: 'currentDate',
+        })
+        this.edit.showCourse()
+        // wx.setStorage({
+        //           data: this.data.schedule,
+        //           key: 'schedule',
+        //         })
+        // wx.navigateTo({
+        //   url:'../../components/course-editor/course-editor?ins='+this.data.ins,
+        // })
+      }
+    })
+  },
+  // getCurrentDateData(e){
+  //   let row = e.currentTarget.dataset.row
+  //   let col = e.currentTarget.dataset.col
+  //   this.data.schedule.tableData.forEach((item)=>{
+  //     if(item.date===col){
+  //       this.setData({
+  //         currentDate:item.dateData[row]
+  //       })
+  //       console.log(this.data.currentDate)
+  //       wx.setStorage({
+  //         data: this.data.schedule,
+  //         key: 'schedule',
+  //       })
+  //     }
+  //   })
+  // },
   setCurrentDateData(e){
     let row = e.currentTarget.dataset.row
     let col = e.currentTarget.dataset.col
@@ -231,6 +299,36 @@ Page({
       functionList: false
     })
   },
+  // 组件course和date的取消和确认
+//取消事件
+_error() {
+  console.log('你点击了取消');
+  this.edit.hideCourse();
+
+},
+_error1() {
+  this.setData({
+    dateFlag:false
+  })
+  console.log('你点击了取消');
+  this.edit1.hideDate();
+},
+//确认事件
+_success() {
+  console.log('你点击了确定');
+  this.edit.hideCourse();
+
+},
+_success1() {
+  this.setData({
+    dateFlag:false
+  })
+  console.log('你点击了确定');
+  this.edit1.hideDate();
+},
+/**
+ * 左右滑动控制函数
+ */
   touchStart:function(e){
     startX=e.touches[0].pageX
     moveFlag=true
@@ -260,141 +358,141 @@ Page({
           {
             date:'14',
             dateData:[
-              {type:'',itemName:'',user:'',time:'07:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'08:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'09:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'10:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'11:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'12:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'13:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'14:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'class',itemName:'语文',user:'李老师',time:'15:00',class:'',link:'',affair:'',location:'',status:'finished'},
-              {type:'',itemName:'',user:'',time:'16:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'17:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'18:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'19:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'20:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'21:00',class:'',link:'',affair:'',location:'',status:'empty'}
+              {type:'',itemName:'',user:'',time:'07:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'08:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'09:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'10:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'11:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'12:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'13:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'14:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'class',itemName:'语文',user:'李老师',time:'15:00',course:'',link:'',affair:'',location:'',status:'finished'},
+              {type:'',itemName:'',user:'',time:'16:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'17:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'18:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'19:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'20:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'21:00',course:'',link:'',affair:'',location:'',status:'empty'}
             ]
           },
           {
             date:'15',
             dateData:[
-              {type:'',itemName:'',user:'',time:'07:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'08:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'09:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'10:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'class',itemName:'语文',user:'李老师',time:'11:00',class:'',link:'',affair:'',location:'',status:'unfinishClass'},
-              {type:'',itemName:'',user:'',time:'12:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'13:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'14:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'15:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'16:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'17:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'18:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'19:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'20:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'21:00',class:'',link:'',affair:'',location:'',status:'empty'}
+              {type:'',itemName:'',user:'',time:'07:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'08:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'09:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'10:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'class',itemName:'语文',user:'李老师',time:'11:00',course:'',link:'',affair:'',location:'',status:'unfinishClass'},
+              {type:'',itemName:'',user:'',time:'12:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'13:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'14:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'15:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'16:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'17:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'18:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'19:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'20:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'21:00',course:'',link:'',affair:'',location:'',status:'empty'}
             ]
           },
           {
             date:'16',
             dateData:[
-              {type:'',itemName:'',user:'',time:'07:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'08:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'09:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'10:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'11:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'12:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'13:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'14:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'15:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'16:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'17:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'18:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'19:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'20:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'21:00',class:'',link:'',affair:'',location:'',status:'empty'}
+              {type:'',itemName:'',user:'',time:'07:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'08:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'09:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'10:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'11:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'12:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'13:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'14:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'15:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'16:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'17:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'18:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'19:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'20:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'21:00',course:'',link:'',affair:'',location:'',status:'empty'}
             ]
           },
           {
             date:'17',
             dateData:[
-              {type:'',itemName:'',user:'',time:'07:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'08:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'09:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'10:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'11:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'12:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'13:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'14:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'15:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'16:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'17:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'18:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'19:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'20:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'21:00',class:'',link:'',affair:'',location:'',status:'empty'}
+              {type:'',itemName:'',user:'',time:'07:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'08:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'09:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'10:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'11:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'12:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'13:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'14:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'15:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'16:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'17:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'18:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'19:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'20:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'21:00',course:'',link:'',affair:'',location:'',status:'empty'}
             ]
           },
           {
             date:'18',
             dateData:[
-              {type:'',itemName:'',user:'',time:'07:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'08:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'09:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'10:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'11:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'affair',itemName:'做饭',user:'',time:'12:00',class:'',link:'',affair:'',location:'',status:'unfinishAffair'},
-              {type:'',itemName:'',user:'',time:'13:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'14:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'15:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'16:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'17:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'18:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'19:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'20:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'21:00',class:'',link:'',affair:'',location:'',status:'empty'}
+              {type:'',itemName:'',user:'',time:'07:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'08:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'09:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'10:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'11:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'affair',itemName:'做饭',user:'',time:'12:00',course:'',link:'',affair:'',location:'',status:'unfinishAffair'},
+              {type:'',itemName:'',user:'',time:'13:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'14:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'15:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'16:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'17:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'18:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'19:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'20:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'21:00',course:'',link:'',affair:'',location:'',status:'empty'}
             ]
           },
           {
             date:'19',
             dateData:[
-              {type:'',itemName:'',user:'',time:'07:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'08:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'09:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'10:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'11:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'12:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'13:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'14:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'15:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'16:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'17:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'18:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'19:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'20:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'21:00',class:'',link:'',affair:'',location:'',status:'empty'}
+              {type:'',itemName:'',user:'',time:'07:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'08:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'09:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'10:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'11:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'12:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'13:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'14:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'15:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'16:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'17:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'18:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'19:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'20:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'21:00',course:'',link:'',affair:'',location:'',status:'empty'}
             ]
           },
           {
             date:'20',
             dateData:[
-              {type:'',itemName:'',user:'',time:'07:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'08:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'09:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'10:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'11:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'12:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'13:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'14:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'15:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'16:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'17:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'18:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'19:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'20:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'21:00',class:'',link:'',affair:'',location:'',status:'empty'}
+              {type:'',itemName:'',user:'',time:'07:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'08:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'09:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'10:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'11:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'12:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'13:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'14:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'15:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'16:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'17:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'18:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'19:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'20:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'21:00',course:'',link:'',affair:'',location:'',status:'empty'}
             ]
           }
         ]
@@ -410,141 +508,141 @@ Page({
           {
             date:'21',
             dateData:[
-              {type:'',itemName:'',user:'',time:'07:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'08:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'09:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'10:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'11:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'12:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'13:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'14:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'class',itemName:'语文',user:'李老师',time:'15:00',class:'',link:'',affair:'',location:'',status:'finished'},
-              {type:'',itemName:'',user:'',time:'16:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'17:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'18:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'19:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'20:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'21:00',class:'',link:'',affair:'',location:'',status:'empty'}
+              {type:'',itemName:'',user:'',time:'07:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'08:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'09:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'10:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'11:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'12:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'13:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'14:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'class',itemName:'语文',user:'李老师',time:'15:00',course:'',link:'',affair:'',location:'',status:'finished'},
+              {type:'',itemName:'',user:'',time:'16:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'17:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'18:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'19:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'20:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'21:00',course:'',link:'',affair:'',location:'',status:'empty'}
             ]
           },
           {
             date:'22',
             dateData:[
-              {type:'',itemName:'',user:'',time:'07:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'08:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'09:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'10:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'class',itemName:'语文',user:'李老师',time:'11:00',class:'',link:'',affair:'',location:'',status:'unfinishClass'},
-              {type:'',itemName:'',user:'',time:'12:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'13:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'14:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'15:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'16:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'17:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'18:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'19:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'20:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'21:00',class:'',link:'',affair:'',location:'',status:'empty'}
+              {type:'',itemName:'',user:'',time:'07:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'08:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'09:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'10:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'class',itemName:'语文',user:'李老师',time:'11:00',course:'',link:'',affair:'',location:'',status:'unfinishClass'},
+              {type:'',itemName:'',user:'',time:'12:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'13:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'14:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'15:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'16:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'17:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'18:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'19:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'20:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'21:00',course:'',link:'',affair:'',location:'',status:'empty'}
             ]
           },
           {
             date:'23',
             dateData:[
-              {type:'',itemName:'',user:'',time:'07:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'08:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'09:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'10:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'11:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'12:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'13:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'14:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'15:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'16:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'17:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'18:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'19:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'20:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'21:00',class:'',link:'',affair:'',location:'',status:'empty'}
+              {type:'',itemName:'',user:'',time:'07:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'08:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'09:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'10:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'11:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'12:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'13:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'14:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'15:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'16:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'17:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'18:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'19:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'20:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'21:00',course:'',link:'',affair:'',location:'',status:'empty'}
             ]
           },
           {
             date:'24',
             dateData:[
-              {type:'',itemName:'',user:'',time:'07:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'08:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'09:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'10:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'11:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'12:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'13:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'14:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'15:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'16:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'17:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'18:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'19:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'20:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'21:00',class:'',link:'',affair:'',location:'',status:'empty'}
+              {type:'',itemName:'',user:'',time:'07:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'08:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'09:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'10:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'11:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'12:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'13:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'14:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'15:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'16:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'17:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'18:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'19:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'20:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'21:00',course:'',link:'',affair:'',location:'',status:'empty'}
             ]
           },
           {
             date:'25',
             dateData:[
-              {type:'',itemName:'',user:'',time:'07:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'08:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'09:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'10:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'11:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'affair',itemName:'做饭',user:'',time:'12:00',class:'',link:'',affair:'',location:'',status:'unfinishAffair'},
-              {type:'',itemName:'',user:'',time:'13:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'14:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'15:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'16:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'17:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'18:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'19:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'20:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'21:00',class:'',link:'',affair:'',location:'',status:'empty'}
+              {type:'',itemName:'',user:'',time:'07:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'08:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'09:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'10:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'11:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'affair',itemName:'做饭',user:'',time:'12:00',course:'',link:'',affair:'',location:'',status:'unfinishAffair'},
+              {type:'',itemName:'',user:'',time:'13:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'14:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'15:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'16:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'17:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'18:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'19:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'20:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'21:00',course:'',link:'',affair:'',location:'',status:'empty'}
             ]
           },
           {
             date:'26',
             dateData:[
-              {type:'',itemName:'',user:'',time:'07:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'08:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'09:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'10:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'11:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'12:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'13:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'14:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'15:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'16:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'17:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'18:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'19:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'20:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'21:00',class:'',link:'',affair:'',location:'',status:'empty'}
+              {type:'',itemName:'',user:'',time:'07:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'08:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'09:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'10:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'11:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'12:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'13:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'14:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'15:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'16:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'17:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'18:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'19:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'20:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'21:00',course:'',link:'',affair:'',location:'',status:'empty'}
             ]
           },
           {
             date:'27',
             dateData:[
-              {type:'',itemName:'',user:'',time:'07:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'08:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'09:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'10:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'11:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'12:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'13:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'14:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'15:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'16:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'17:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'18:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'19:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'20:00',class:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'21:00',class:'',link:'',affair:'',location:'',status:'empty'}
+              {type:'',itemName:'',user:'',time:'07:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'08:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'09:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'10:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'11:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'12:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'13:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'14:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'15:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'16:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'17:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'18:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'19:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'20:00',course:'',link:'',affair:'',location:'',status:'empty'},
+              {type:'',itemName:'',user:'',time:'21:00',course:'',link:'',affair:'',location:'',status:'empty'}
             ]
           }
         ]
@@ -554,21 +652,27 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-    let value =wx.getStorageSync('schedule')
-    if(value){
-      this.setData({
-        schedule:value
-      })
-    }
-  },
+  // 从缓存读取数据，放入data
+  // onLoad: function (options) {
+  //   let value =wx.getStorageSync('schedule')
+  //   if(value){
+  //     this.setData({
+  //       schedule:value
+  //     });
+  //     // wx.clearStorage()
+  //   }
+  // },
+  // onLoad: function () {
+  //   var that=this;
+  //   wx.getStorage({
+  //     key:'orderInfo',
+  //     success:function(res){
+  //       that.setData({
+  //         orderInfo:res.data
+  //       })
+  //     }
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
 
-  },
 
   /**
    * 生命周期函数--监听页面显示
@@ -611,4 +715,5 @@ Page({
   onShareAppMessage: function () {
 
   }
+  
 })

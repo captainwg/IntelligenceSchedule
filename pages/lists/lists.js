@@ -77,6 +77,10 @@ Page({
     let index = e.currentTarget.dataset.index
     var that = this;
     //var addshow = that.data.newsList[index].addshow;
+    
+    let list =this.data.newsList;
+    list.forEach(item => item.addshow = false)
+
     let newsValue = that.data.newsList;
     newsValue[index].addshow = !newsValue[index].addshow;
      that.setData({

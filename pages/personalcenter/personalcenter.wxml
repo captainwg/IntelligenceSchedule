@@ -11,13 +11,13 @@
 </view>
 
 <view class='contain'>
-  <view class='item item-top'>
+  <view class='item item-top' bindtap="bindViewTap1">
     <view class='icon'><image src='/images/购物车.png' style='width:32rpx;height:32rpx;'></image></view>
     <view class='itemname'>
-      <view>购物车</view>
+      <view>收藏夹</view>
     </view>
   </view>
-  <view class='item' >
+  <view class='item' bindtap="bindViewTap2">
     <view class='icon'><image src='/images/设置.png' style='width:32rpx;height:32rpx;'></image></view>
     <view class='itemname'>
       <view>设置</view>

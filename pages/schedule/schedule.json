@@ -2,7 +2,9 @@
   "usingComponents": {
     "text":"../../components/text/text",
     "camera":"../../components/camera/camera",
-    "functionList":"../../components/functionList/functionList"
+    "functionList":"../../components/functionList/functionList",
+    "course":"../../components/course-editor/course-editor",
+    "date":"../../components/date-editor/date-editor"
   },
   "navigationBarTitleText": "日程"
 

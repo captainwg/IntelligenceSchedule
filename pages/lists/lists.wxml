@@ -54,7 +54,7 @@
         <view class="{{addshow?'addbtn_show':'addbtn_hide'}}">
             <view class="addst">
               <view class="top_add">日程</view>
-              <view class="bot_add">收藏</view>
+              <!-- <view class="bot_add">收藏</view> -->
             </view>
         </view>
       </view>

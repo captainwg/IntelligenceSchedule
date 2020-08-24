@@ -1,2 +1,72 @@
+
+<view class="container" >
+<!--文章列表模板 begin-->
+<!-- <template name="items"> -->
+  <!-- <view class="flex-container">
+  <view class="weui-cells">
+    <mp-slideview buttons="{{slideButtons}}" >
+    <mp-cell>
+    <view>
+    <view class="top">
+      <view class="left">
+        <image class="csimg" src="{{csimg}}" mode="aspectFit"></image>
+      </view>
+      <view class="right">
+        <view class="title">{{title}}</view>
+        <view class="desc">{{desc}}</view>
+      </view>  
+    </view>
+
+    <view class="bottom">
+      <view class="date">{{cDate}} 开课</view>
+      <view class="time">{{cTime}} 课时 · </view>
+      <view class="hour">{{cHour}} 小时/次</view>
+      <view class="amt">￥{{cAMT}}</view>
+    </view>
+
+    </view>
+    </mp-cell>
+     </mp-slideview>
+  </view>
+   
+  </view> -->
+<!-- </template> -->
+<!--文章列表模板 end-->
+
+<!--循环输出列表 begin-->
+<view wx:for="{{newsList}}" class="list-item" >
+ <!-- <template is="items" data="{{...item, index}}"/> -->
+ <view class="flex-container">
+  <view class="weui-cells">
+    <mp-slideview buttons="{{slideButtons}}" bindbuttontap="slideButtonTap" data-index="{{index}}" >
+    <!-- <mp-cell> -->
+    <view>
+    <view class="top">
+      <view class="left">
+        <image class="csimg" src="{{item.csimg}}" mode="aspectFit"></image>
+      </view>
+      <view class="right">
+        <view class="title">{{item.title}}{{index}}</view>
+        <view class="desc">{{item.desc}}</view>
+      </view>  
+    </view>
+
+    <view class="bottom">
+      <view class="date">{{item.cDate}} 开课</view>
+      <view class="time">{{item.cTime}} 课时 · </view>
+      <view class="hour">{{item.cHour}} 小时/次</view>
+      <view class="amt">￥{{item.cAMT}}</view>
+    </view>
+
+    </view>
+    <!-- </mp-cell> -->
+     </mp-slideview>
+  </view>
+  </view>
+</view>
+<!--循环输出列表 end-->
+</view>
+
 <!--pages/favorite/favorite.wxml-->
 <text>pages/favorite/favorite.wxml</text>
+

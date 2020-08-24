@@ -1,0 +1,40 @@
+<!--component/date-editor/date-editor.wxml-->
+<view class="date-edit" hidden="{{dateFlag}}">
+  <view class='date-container'>
+    <view class="date-edit-title">{{title}}</view>
+    <view class='date-edit-content date-edit-content-top'>  
+      <view class="date-edit-con">{{content1}}</view>
+      <view class='input1' >
+        <input type='text1' name="itemName" placeholder="请输入活动名" value="{{itemName}}" auto-focus/>       
+      </view>
+    </view>
+    <view class='date-edit-content'>
+      <view class="date-edit-con">{{content2}}</view>
+      <view class='input1' >
+        <input type='text2' name="user" placeholder="请输入人员" value="{{user}}" auto-focus/>
+      </view>
+    </view>
+    <view class='date-edit-content'>
+      <view class="date-edit-con">{{content3}}</view>
+      <view class='input1' >
+        <input type='text3' name="time" placeholder="请输入时间" value="{{time}}" auto-focus/>
+      </view>
+    </view>
+    <view class='date-edit-content'>
+      <view class="date-edit-con">{{content4}}</view>
+      <view class='input1' >
+        <input type='text4' name="affair" placeholder="请输入事情" value="{{affair}}"  auto-focus/>
+      </view>
+    </view>
+    <view class='date-edit-content'>
+      <view class="date-edit-con">{{content5}}</view>
+      <view class='input1' >
+        <input type='text5' name="location" placeholder="请输入地点" value="{{location}}"  auto-focus/>
+      </view>
+    </view>
+    <view class="date-edit-btn">
+      <text class="btn-ok" bindtap='_success1'>{{btn_ok}}</text>
+      <text class="btn-no" bindtap='_error1'>{{btn_no}}</text>     
+    </view>
+  </view>
+</view>

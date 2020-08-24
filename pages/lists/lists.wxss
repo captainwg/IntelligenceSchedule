@@ -218,29 +218,29 @@
 
 .right .addst{
   border:1rpx solid #2F2012;
-  height: 160rpx;
-  width: 120rpx;
+  height: 40rpx;
+  width: 100rpx;
   position: absolute;
-  right: 75rpx;
-  top:140rpx;
+  right:70rpx;
+  top:135rpx;
   z-index: 100;
-  display: flex;
-  flex-direction:column;
+  /* display: flex; */
+  /* flex-direction:column; */
   border-radius: 8rpx
 }
 
 .right .addst .top_add{
   background-color: #2F2012; 
-  font-size: 25rpx;
+  font-size: 28rpx;
   font-family: PingFangSC-Regular;
   color: #FEFCF5;
-  flex:1;
+  /* flex:1; */
   text-align: center;
-  padding-top: 20rpx;
-  border-bottom: 1rpx solid white;
+  /* padding-top: 20rpx; */
+  /* border-bottom: 1rpx solid white; */
 }
 
-.right .addst .bot_add{
+/* .right .addst .bot_add{
   background-color: #2F2012; 
   flex:1;
   font-size: 25rpx;
@@ -248,7 +248,7 @@
   color: #FEFCF5;
   text-align: center;
   padding-top: 20rpx;
-}
+} */
 
 .container .flex-container .bottom{
   background-color: white;

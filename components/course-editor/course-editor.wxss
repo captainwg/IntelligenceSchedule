@@ -1,0 +1,107 @@
+/* component/course-editor/course-editor.wxss */
+.course-edit {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .5);
+}
+.course-container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+ 
+  width: 95%;
+  max-width: 800rpx;
+  border: 2.68rpx solid #8B572A;
+  border-radius: 10.68rpx;
+  box-sizing: bordre-box;
+  transform: translate(-50%, -50%); 
+  overflow: hidden;
+  background: #fff;
+}
+.course-edit-title {
+  /*  */
+  width: 100%;
+  color: #4D4D4D;
+  margin-top: 20rpx;
+  padding: 10rpx;
+  padding-bottom: 30rpx;
+  text-align: center;
+  font-size: 37.33rpx;
+  border-bottom: 2rpx solid #8B572A;
+}
+.course-edit-content{
+  /* 行间距 */
+  /* line-height: 25rpx; */
+
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+/* .course-edit-content-top{
+  margin: 20rpx;
+} */
+.course-edit-con {
+  color: #4D4D4D ;
+  margin: 36rpx 44rpx 0rpx 48rpx;
+  /* margin: 20rpx; */
+  /* width: 100%; */
+  text-align: left;
+  font-size: 37.32rpx;
+  /* order: 1;
+  flex: 10; */
+}
+.input1{
+  margin: 36rpx 44rpx 0rpx 48rpx;
+  width: 95%;
+  height: 74.68rpx;
+  font-size: 30rpx;
+  border:0.33px solid #AAAAAA ;
+  border-radius: 10.68rpx;
+  order: 5;
+  flex: 90;
+}
+
+.input1 input{
+  width: 100%;
+  height: 68rpx;
+  display: flex;
+  align-items: center;
+}
+.course-edit-btn {
+  margin: 32rpx 100rpx 32rpx 100rpx;
+  display: flex;
+  font-size: 32rpx;
+  color: #FFFFFF;
+  /* 水平居中垂直 */
+  /* justify-content: center;
+  align-items: center; */
+  /* margin-left: 10rpx;
+  margin-right: 10rpx; */
+  justify-content: space-around;
+  /* justify-content: space-between; */
+  margin-bottom: 40rpx;
+  border-radius:10.68rpx;
+ 
+}
+.btn-ok{
+  background-color: #8B572A;
+  border-right: 2rpx solid #8B572A;
+}
+.btn-no{
+  background-color: #CCCCCC;
+  border-right: 2rpx solid #CCCCCC;
+}
+
+.course-edit-btn text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25%;
+  height: 68rpx;
+  border: 2rpx solid #ccc;
+  border-radius: 88rpx;
+}
