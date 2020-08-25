@@ -74,23 +74,91 @@ Component({
    * 组件的初始数据
    */
   data: {    courseFlag: true,
-    type:'',itemName:'',user:'',time:'',course:'1课时',link:'',affair:'',location:'',status:'',
-    currentDate:{},
+    type:'',itemName:'',user:'',time:'',course:'2课时',link:'',affair:'',location:'',status:''
     }, 
  
   /**
    * 组件的方法列表
    */
   methods: {
-    //隐藏弹框
-    hideCourse: function () {
+
+	
+    // groupClick: function (e){
+    //   var group = this.data.items[e.target.dataset.index]
+    //   console.log(group)
+    //   // 使用 triggerEvent 方法触发自定义组件事件，指定事件名、detail对象和事件选项
+    //   this.triggerEvent('okEvent', { group}, {})
+       
+       
+    //   this.setData({
+    //   isShow: false
+      
+    //   })
+    //   },
+    // itemName的输入框
+    inputItemName:function(e){
+      let curItemName=e.detail.value
+      this.setData({
+        itemName:curItemName
+      })
+      console.log(e.detail.value)
+    },
+    // user的输入框
+    inputUser:function(e){
+      let curUser=e.detail.value
+      this.setData({
+        user:curUser
+      })
+      console.log(e.detail.value)
+    },
+
+    // course的输入框
+    inputCourse:function(e){
+      let curCourse=e.detail.value
+      this.setData({
+         course:curCourse
+      })
+      console.log(e.detail.value)
+    },
+    // time的输入框
+    inputTime:function(e){
+      let curTime=e.detail.value
+      this.setData({
+        time:curTime
+      })
+      console.log(e.detail.value)
+    },
+  // link的输入框
+  inputLink:function(e){
+    let curLink=e.detail.value
+    this.setData({
+      link:curLink
+    })
+    console.log(e.detail.value)
+  },
+  // 表单提交
+    formSubmit: function(e) {
+      console.log('form发生了submit事件，携带数据为：', e.detail.value)
+      this.setData({
+        allValue:e.detail.value
+      })
+    },
+      //隐藏弹框
+    hideCourse: function (e) {
       this.setData({
         courseFlag: !this.data.courseFlag
       })
+      // let { index } = e.currentTarget.dataset;
+    //   let data = this.data.data;
+    //   // 自定义一个事件，并且传值
+    //   this.triggerEvent('myevent',{params: data[index]},{})
     },
-    //展示弹框
+    //展示弹框+读取数据
     showCourse () {
-      var that = this; 
+      var that = this;
+      this.setData({
+        courseFlag: !this.data.courseFlag
+      }) 
       wx.getStorage({
         key: 'currentDate',
         success: function(res) {          
@@ -107,11 +175,9 @@ Component({
             status :  res.data.status
            })   
         }
-    })
-      this.setData({
-        courseFlag: !this.data.courseFlag
       })
     },
+    
     /*
     * 内部私有方法建议以下划线开头
     * triggerEvent 用于触发事件
@@ -120,10 +186,50 @@ Component({
       //触发取消回调
       this.triggerEvent("error")
     },
-    _success () {
+    _success (e) {
       //触发成功回调
+      var that=this;
+      // var objData = e.detail.value;
+      // if(objData.type==='class' || objData.type===''){ 
+      //      // 同步方式存储表单数据 
+      //      wx.setStorageSync('type', objData.type); 
+      //      wx.setStorageSync('itemName', objData.itemName); 
+      //      wx.setStorageSync('user', objData.user); 
+      //      wx.setStorageSync('time', objData.time); 
+      //      // 原来的class改成了course
+      //      wx.setStorageSync('course', objData.course); 
+      //      wx.setStorageSync('link', objData.link); 
+      //      wx.setStorageSync('affair', objData.affair); 
+      //      wx.setStorageSync('location', objData.location); 
+      // }
+      //存储数据
+      let dataSet = {
+        type:that.data.type,
+        itemName:that.data.itemName,
+        user:that.data.user,
+        time:that.data.time,
+        course:that.data.course,
+        link:that.data.link,
+        affair:that.data.affair,
+        location:that.data.location,
+        status:'unfinishClass'
+      }
+      console.log(dataSet)
+      let table= wx.getStorageSync('schedule')
+      let currentRow= wx.getStorageSync('row')
+      let currentCol= wx.getStorageSync('col')
+      table.tableData.forEach((item)=>{
+        if(item.date===currentCol){
+          item.dateData[currentRow]=dataSet
+        }
+      })
+      wx.setStorage({
+        data: table,
+        key: 'schedule',
+      })
       this.triggerEvent("success");
     },
+    // getCoursedata废弃了
     getCoursedata(){
       var currentDate=wx.getStorage({
         key: 'currentDate',
@@ -174,7 +280,7 @@ Component({
   //  //加载完后，处理事件  
   //  // 如果有本地数据，则直接显示
   created() {},
-	
+	// 废弃了
   attached:function(options){ 
     //获取本地数据 
     var that = this; 

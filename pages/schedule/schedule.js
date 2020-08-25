@@ -177,20 +177,19 @@ Page({
   showDate(e){
     let row = e.currentTarget.dataset.row
     let col = e.currentTarget.dataset.col
+    wx.setStorage({
+      data: col,
+      key: 'col',
+    })
+    wx.setStorage({
+      data: row,
+      key: 'row',
+    })
     this.data.schedule.tableData.forEach((item)=>{
       if(item.date===col){
         this.setData({
           currentDate:item.dateData[row],     
-        })
-        // if(this.data.currentDate.type==="class")
-        //   {
-        //     this.edit.showCourse()            
-        //   }
-        // else{
-        //     this.edit1.showDate()
-        // }
-        // 判断课程class 日程affair
-        
+        })        
         wx.setStorage({
           data: this.data.currentDate,
           key: 'currentDate',
@@ -210,6 +209,14 @@ Page({
   showCourse(e){
     let row = e.currentTarget.dataset.row
     let col = e.currentTarget.dataset.col
+    wx.setStorage({
+      data: col,
+      key: 'col',
+    })
+    wx.setStorage({
+      data: row,
+      key: 'row',
+    })
     this.data.schedule.tableData.forEach((item)=>{
       if(item.date===col){
         this.setData({
@@ -315,13 +322,20 @@ _error1() {
 },
 //确认事件
 _success() {
+  let table= wx.getStorageSync('schedule')
+  this.setData({
+    dateFlag:false,
+    schedule:table
+  })
   console.log('你点击了确定');
   this.edit.hideCourse();
 
 },
 _success1() {
+  let table= wx.getStorageSync('schedule')
   this.setData({
-    dateFlag:false
+    dateFlag:false,
+    schedule:table
   })
   console.log('你点击了确定');
   this.edit1.hideDate();
@@ -653,15 +667,19 @@ _success1() {
    * 生命周期函数--监听页面加载
    */
   // 从缓存读取数据，放入data
-  // onLoad: function (options) {
-  //   let value =wx.getStorageSync('schedule')
-  //   if(value){
-  //     this.setData({
-  //       schedule:value
-  //     });
-  //     // wx.clearStorage()
-  //   }
-  // },
+  onLoad: function (options) {
+    // let value =wx.getStorageSync('schedule')
+    // if(value){
+    //   this.setData({
+    //     schedule:value
+    //   });
+    //   // wx.clearStorage()
+    // }
+    wx.setStorage({
+      data: this.data.schedule,
+      key: 'schedule',
+    })
+  },
   // onLoad: function () {
   //   var that=this;
   //   wx.getStorage({

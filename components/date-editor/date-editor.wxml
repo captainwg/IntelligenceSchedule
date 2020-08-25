@@ -5,31 +5,31 @@
     <view class='date-edit-content date-edit-content-top'>  
       <view class="date-edit-con">{{content1}}</view>
       <view class='input1' >
-        <input type='text1' name="itemName" placeholder="请输入活动名" value="{{itemName}}" auto-focus/>       
+        <input type='text1' name="itemName" placeholder="请输入活动名" value="{{itemName}}" bindinput="inputItemName" auto-focus/>       
       </view>
     </view>
     <view class='date-edit-content'>
       <view class="date-edit-con">{{content2}}</view>
       <view class='input1' >
-        <input type='text2' name="user" placeholder="请输入人员" value="{{user}}" auto-focus/>
+        <input type='text2' name="user" placeholder="请输入人员" value="{{user}}" bindinput="inputUser" auto-focus/>
       </view>
     </view>
     <view class='date-edit-content'>
       <view class="date-edit-con">{{content3}}</view>
       <view class='input1' >
-        <input type='text3' name="time" placeholder="请输入时间" value="{{time}}" auto-focus/>
+        <input type='text3' name="time" placeholder="请输入时间" value="{{time}}" bindinput="inputTime" auto-focus/>
       </view>
     </view>
     <view class='date-edit-content'>
       <view class="date-edit-con">{{content4}}</view>
       <view class='input1' >
-        <input type='text4' name="affair" placeholder="请输入事情" value="{{affair}}"  auto-focus/>
+        <input type='text4' name="affair" placeholder="请输入事情" value="{{affair}}" bindinput="inputAffair" auto-focus/>
       </view>
     </view>
     <view class='date-edit-content'>
       <view class="date-edit-con">{{content5}}</view>
       <view class='input1' >
-        <input type='text5' name="location" placeholder="请输入地点" value="{{location}}"  auto-focus/>
+        <input type='text5' name="location" placeholder="请输入地点" value="{{location}}" bindinput="inputLocation" auto-focus/>
       </view>
     </view>
     <view class="date-edit-btn">

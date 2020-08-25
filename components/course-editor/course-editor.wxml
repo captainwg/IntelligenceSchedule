@@ -1,5 +1,6 @@
 <!--component/course-editor/course-editor.wxml-->
-<form bindsubmit="submitdate">
+<!-- bindsubmit="submitdate" -->
+<form bindsubmit="formSubmit">
 <view class="course-edit" hidden="{{courseFlag}}">
   <view class='course-container'>
   <!-- 标题 -->
@@ -11,32 +12,32 @@
       <!-- 输入框 -->
       <view class='input1' >
         <!-- <input type='text1'placeholder="请输入课程名" auto-focus/> -->
-        <input type='text1' name="itemName" placeholder="请输入课程名" value="{{itemName}}" auto-focus/>
+        <input type='text1' name="itemName" placeholder="请输入课程名" value="{{itemName}}" bindinput="inputItemName" auto-focus/>
         <!-- <input type='text1' bindinput="ins" placeholder="请输入课程名" auto-focus/> -->
       </view>
     </view>
     <view class='course-edit-content'>
       <view class="course-edit-con">{{content2}}</view>
       <view class='input1' >
-        <input type='text2' name="user" placeholder="请输入教师" value="{{user}}" auto-focus/>
+        <input type='text2' name="user" placeholder="请输入教师" value="{{user}}" bindinput="inputUser" auto-focus/>
       </view>
     </view>
     <view class='course-edit-content'>
       <view class="course-edit-con">{{content3}}</view>
       <view class='input1' >
-        <input type='text3' name="course" placeholder="请输入课时" value="{{course}}" auto-focus/>
+        <input type='text3' name="course" placeholder="请输入课时" value="{{course}}" bindinput="inputCourse" auto-focus/>
       </view>
     </view>
     <view class='course-edit-content'>
       <view class="course-edit-con">{{content4}}</view>
       <view class='input1' >
-        <input type='text4' name="time" placeholder="请输入时间" value="{{time}}"  auto-focus/>
+        <input type='text4' name="time" placeholder="请输入时间" value="{{time}}" bindinput="inputTime" auto-focus/>
       </view>
     </view>
     <view class='course-edit-content'>
       <view class="course-edit-con">{{content5}}</view>
       <view class='input1' >
-        <input type='text5' name="link" placeholder="请输入链接" value="{{link}}" auto-focus/>
+        <input type='text5' name="link" placeholder="请输入链接" value="{{link}}" bindinput="inputLink" auto-focus/>
       </view>
     </view>
 
@@ -44,7 +45,7 @@
       <button type="primary" form-type="submit">登陆</button> 
     </view>  -->
     <view class="course-edit-btn">
-      <text class="btn-ok" bindtap='_success' form-type="submit">{{btn_ok}}</text>
+      <text class="btn-ok" bindtap='_success' form-type="submit" data-itemName="{{itemName}}">{{btn_ok}}</text>
       <text class="btn-no" bindtap='_error'>{{btn_no}}</text>     
     </view>
   </view>
