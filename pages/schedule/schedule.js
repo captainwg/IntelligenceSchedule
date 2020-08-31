@@ -206,6 +206,7 @@ Page({
       }
     })
   },
+
   showCourse(e){
     let row = e.currentTarget.dataset.row
     let col = e.currentTarget.dataset.col
@@ -282,9 +283,11 @@ Page({
   },
   _confirmEvent(e) {
     //do something when cancle is clicked
+    let table= wx.getStorageSync('schedule')
     this.setData({
       text: false,
-      camera:false
+      camera:false,
+      schedule:table
     })
   },
   _openText(e) {
@@ -300,6 +303,48 @@ Page({
       functionList: false,
       camera: true
     })
+  },
+  _openCourse(e){
+    this.setData({
+      functionList: false
+    })
+    let dataSet = {
+      type:'',
+      itemName:'',
+      user:'',
+      time:'',
+      course:'',
+      link:'',
+      affair:'',
+      location:'',
+      status:'unfinishClass'
+    }
+    wx.setStorage({
+      data: dataSet,
+      key: 'currentDate',
+    })
+    this.edit.showCourse();
+  },
+  _openAffair(e){
+    this.setData({
+      functionList: false
+    })
+    let dataSet = {
+      type:'',
+      itemName:'',
+      user:'',
+      time:'',
+      course:'',
+      link:'',
+      affair:'',
+      location:'',
+      status:'unfinishAffair'
+    }
+    wx.setStorage({
+      data: dataSet,
+      key: 'currentDate',
+    })
+    this.edit1.showDate();
   },
   _closeDialog(e){
     this.setData({

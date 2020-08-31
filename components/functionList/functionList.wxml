@@ -10,13 +10,13 @@
             <image src="../../images/photo.png" style="width:20px;height:20px;padding-right:20px"></image>
             <text>图片识别</text>
         </view>
-        <view class='wx-dialog-content' bindtap='toClass'>
+        <view class='wx-dialog-content' catchtap='_addCourse'>
             <image src="../../images/addClass.png" style="width:20px;height:20px;padding-right:20px"></image>
             <text>课程添加</text>
         </view>
-        <view class='wx-dialog-content'>
+        <view class='wx-dialog-content' catchtap='_addAffair'>
             <image src="../../images/addItem.png" style="width:20px;height:20px;padding-right:20px"></image>
-            <text>手工添加</text>
+            <text>日程添加</text>
         </view>
     </view>
 </view>

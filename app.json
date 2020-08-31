@@ -1,7 +1,7 @@
 {
-  "pages":[
-    "pages/lists/lists",
+  "pages": [
     "pages/schedule/schedule",
+    "pages/lists/lists",
     "pages/favorite/favorite",
     "pages/timeset/timeset",
     "pages/index/index",
@@ -9,37 +9,40 @@
     "pages/personalcenter/personalcenter",
     "pages/logs/logs"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#FBD24A",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"white"
+    "navigationBarTextStyle": "white"
   },
-  "tabBar": {  
-    "color": "#a9b7b7",  
-    "selectedColor": "#8B572A",  
-    "borderStyle": "black" ,
-    "list": [{  
-      "selectedIconPath": "images/date.png",  
-      "iconPath": "images/date_unselected.png",  
-      "pagePath": "pages/schedule/schedule",  
-      "text": "日程"  
-    }, {  
-      "selectedIconPath": "images/class.png",  
-      "iconPath": "images/class_unselected.png",  
-      "pagePath": "pages/lists/lists",  
-      "text": "课程"  
-    },{  
-      "selectedIconPath": "images/center.png",  
-      "iconPath": "images/center_unselected.png",  
-      "pagePath": "pages/personalcenter/personalcenter",  
-      "text": "个人"  
-    }
-    ]  
+  "tabBar": {
+    "color": "#a9b7b7",
+    "selectedColor": "#8B572A",
+    "borderStyle": "black",
+    "list": [
+      {
+        "selectedIconPath": "images/date.png",
+        "iconPath": "images/date_unselected.png",
+        "pagePath": "pages/schedule/schedule",
+        "text": "日程"
+      },
+      {
+        "selectedIconPath": "images/class.png",
+        "iconPath": "images/class_unselected.png",
+        "pagePath": "pages/lists/lists",
+        "text": "课程"
+      },
+      {
+        "selectedIconPath": "images/center.png",
+        "iconPath": "images/center_unselected.png",
+        "pagePath": "pages/personalcenter/personalcenter",
+        "text": "个人"
+      }
+    ]
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json",
   "useExtendedLib": {
-   "weui": true
+    "weui": true
   }
 }

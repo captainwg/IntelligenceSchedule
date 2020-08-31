@@ -24,7 +24,8 @@ Component({
       functionList: false
     })
   },
-
+  ready: function() { 
+  },
   /**
    * 组件的方法列表
    */
@@ -44,6 +45,12 @@ Component({
     _openCamera() {
     //触发打开页面回调
     this.triggerEvent("openCamera")
+  },
+  _addCourse(){
+    this.triggerEvent("openCourse")
+  },
+  _addAffair(){
+    this.triggerEvent("openAffair")
   },
   _confirmEvent() {
       //触发成功回调

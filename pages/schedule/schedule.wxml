@@ -74,7 +74,9 @@
         functionList="{{functionList}}"
         bind:closeDialog="_closeDialog"
         bind:openText="_openText" 
-        bind:openCamera="_openCamera"/>
+        bind:openCamera="_openCamera"
+        bind:openCourse="_openCourse"
+        bind:openAffair="_openAffair"/>
   <movable-area class="movable-area">
     <movable-view class="movable-view" direction="all" bindtap="showDialog">
       <image src="../../images/add.png" style="width:50px;height:50px"></image>
@@ -82,17 +84,14 @@
   </movable-area>
   <course id='course' 
       title='课程编辑' 
-      
       btn_ok='确认'
       btn_no='取消' 
       bind:success="_success"
       bind:error="_error"  
-      
       >
   </course>
   <date id='date' 
       title='日程编辑' 
-      
       btn_ok='确认'
       btn_no='取消' 
       bind:success1="_success1"

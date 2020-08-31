@@ -69,7 +69,6 @@ Component({
       this.setData({
         itemName:curItemName
       })
-      console.log(this.data.curItemName)
     },
     // user的输入框
     inputUser:function(e){
@@ -77,7 +76,6 @@ Component({
       this.setData({
         user:curUser
       })
-      console.log(this.data.user)
     },
 
     // course的输入框
@@ -86,7 +84,6 @@ Component({
       this.setData({
          course:curCourse
       })
-      console.log(e.detail.value)
     },
     // time的输入框
     inputTime:function(e){
@@ -94,7 +91,6 @@ Component({
       this.setData({
         time:curTime
       })
-      console.log(e.detail.value)
     },
     // affair的输入框
     inputAffair:function(e){
@@ -102,7 +98,6 @@ Component({
       this.setData({
         affair:curAffair
       })
-      console.log(e.detail.value)
     },
     // location的输入框
     inputLocation:function(e){
@@ -110,7 +105,6 @@ Component({
       this.setData({
         location:curLocation
     })
-  console.log(e.detail.value)
 },
 
 

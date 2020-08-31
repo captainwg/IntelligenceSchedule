@@ -101,7 +101,6 @@ Component({
       this.setData({
         itemName:curItemName
       })
-      console.log(e.detail.value)
     },
     // user的输入框
     inputUser:function(e){
@@ -109,7 +108,6 @@ Component({
       this.setData({
         user:curUser
       })
-      console.log(e.detail.value)
     },
 
     // course的输入框
@@ -118,7 +116,6 @@ Component({
       this.setData({
          course:curCourse
       })
-      console.log(e.detail.value)
     },
     // time的输入框
     inputTime:function(e){
@@ -126,7 +123,6 @@ Component({
       this.setData({
         time:curTime
       })
-      console.log(e.detail.value)
     },
   // link的输入框
   inputLink:function(e){
@@ -134,7 +130,6 @@ Component({
     this.setData({
       link:curLink
     })
-    console.log(e.detail.value)
   },
   // 表单提交
     formSubmit: function(e) {
@@ -177,7 +172,15 @@ Component({
         }
       })
     },
-    
+    goBaidu:function(){
+      wx.navigateTo({
+      url:'../../pages/outerwebsite/outerwebsite', //
+      success:function() {
+      }, //成功后的回调；
+      fail:function() { }, //失败后的回调；
+      complete:function() { } //结束后的回调(成功，失败都会执行)
+      })
+    },
     /*
     * 内部私有方法建议以下划线开头
     * triggerEvent 用于触发事件

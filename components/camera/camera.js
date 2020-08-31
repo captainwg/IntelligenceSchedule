@@ -38,6 +38,7 @@ Component({
    * 组件的初始数据
    */
   data: {
+    src:''
       // 弹窗显示控制
       // camera: false
   },
@@ -60,12 +61,69 @@ Component({
     ctx.takePhoto({
       quality: 'high',
       success: (res) => {
-        console.log(res)
         this.setData({
           src: res.tempImagePath
         })
+        const file = wx.getFileSystemManager()
+        const picBase64 = file.readFileSync(res.tempImagePath,"base64")
+        console.log(picBase64)
+        console.log(res.tempImagePath)
+        var that = this
+        wx.request({
+          url: 'http://47.107.64.43:5009/getocr', 
+          data: {
+            img: picBase64
+          },
+          method:'POST',
+          header: {
+            'content-type': 'application/json' // 默认值
+          },
+          success (res) {
+            console.log(res.data.text)
+            if(res.data.text.words_result){
+              let resultSet = res.data.text.words_result
+              resultSet.forEach((item)=>{
+                console.log(item)
+                let dataSet = {
+                  type:'class',
+                  itemName:item.text,
+                  user:'',
+                  time:item.left,
+                  course:'1课时',
+                  link:'',
+                  affair:'',
+                  location:'',
+                  status:'unfinishClass'
+                }
+                let date = item.top
+                let table= wx.getStorageSync('schedule')
+                table.tableData.forEach((item)=>{
+                  if(item.date===currentCol){
+                    for(let i=0;i<item.dateData.length;i++){
+                      if(item.dateData[i].time===time){
+                        item.dateData[i]=dataSet
+                      }
+                    }
+                  }
+                })
+                wx.setStorage({
+                  data: table,
+                  key: 'schedule',
+                })
+                console.log('调用成功')
+                that.triggerEvent("confirmEvent");
+              })
+            }
+            console.log('调用成功')
+          },
+          fail(error){
+            console.log(error)
+            console.log('调用失败')
+          }
+        })
       }
     })
+    this.triggerEvent("confirmEvent");
   },
   error(e) {
     console.log(e.detail)
