@@ -110,11 +110,10 @@ Component({
                   data: table,
                   key: 'schedule',
                 })
-                console.log('调用成功')
-                that.triggerEvent("confirmEvent");
               })
             }
             console.log('调用成功')
+            that.triggerEvent("confirmEvent");
           },
           fail(error){
             console.log(error)
