@@ -164,6 +164,44 @@ Page({
     // orderInfo:{}
   },
   showDialog() {
+    let subscribe = wx.getStorageSync('subscribe')
+     if(!subscribe){
+            let tmpIds = [
+              "AuBm68rZSfwYpD5rfPmVzbASIAqLQpYMeljMuYfcAd4"
+              ];
+            wx.requestSubscribeMessage({
+              tmplIds: tmpIds,
+              success (res) {
+                wx.setStorage({
+                  data: true,
+                  key: 'subscribe',
+                })
+                console.log('十秒开始')
+                setTimeout(function() {
+                  wx.request({
+                    url: 'https://542124141.xyz/sendsubmsg',
+                    method: 'POST',
+                  data: {
+                    openid: wx.getStorageSync('openid')
+                  },
+                })
+    }, 10000);
+                console.log('十秒了')
+      
+              }
+                //  let acceptTmpList = [];
+                //  for(let i = 0; i < tmpIds.length; i++ )
+                //  {
+                //     let tmpId = tmpIds[i];
+                //     if(res[tmpId] == "accept")
+                //     {
+                //       acceptTmpList.push(tmpId);
+                //     }
+                //   }
+                
+                 
+                })
+              }
     this.setData({
         functionList: true
     })
@@ -175,6 +213,43 @@ Page({
   },
 
   showDate(e){
+    let subscribe = wx.getStorageSync('subscribe')
+     if(!subscribe){
+            let tmpIds = [
+              "AuBm68rZSfwYpD5rfPmVzbASIAqLQpYMeljMuYfcAd4"
+              ];
+            wx.requestSubscribeMessage({
+              tmplIds: tmpIds,
+              success (res) {
+                wx.setStorage({
+                  data: true,
+                  key: 'subscribe',
+                })
+                console.log('十秒开始')
+                setTimeout(() => {
+                  wx.request({
+                    url: 'https://542124141.xyz/sendsubmsg',
+                    method: 'POST',
+                  data: {
+                    openid: wx.getStorageSync('openid')
+                  },
+                }, 10000);
+                console.log('十秒了')
+      
+                          })
+                //  let acceptTmpList = [];
+                //  for(let i = 0; i < tmpIds.length; i++ )
+                //  {
+                //     let tmpId = tmpIds[i];
+                //     if(res[tmpId] == "accept")
+                //     {
+                //       acceptTmpList.push(tmpId);
+                //     }
+                //   }
+                
+                  }
+                })
+              }
     let row = e.currentTarget.dataset.row
     let col = e.currentTarget.dataset.col
     wx.setStorage({
@@ -208,6 +283,43 @@ Page({
   },
 
   showCourse(e){
+    let subscribe = wx.getStorageSync('subscribe')
+     if(!subscribe){
+            let tmpIds = [
+              "AuBm68rZSfwYpD5rfPmVzbASIAqLQpYMeljMuYfcAd4"
+              ];
+            wx.requestSubscribeMessage({
+              tmplIds: tmpIds,
+              success (res) {
+                wx.setStorage({
+                  data: true,
+                  key: 'subscribe',
+                })
+                console.log('十秒开始')
+                setTimeout(() => {
+                  wx.request({
+                    url: 'https://542124141.xyz/sendsubmsg',
+                    method: 'POST',
+                  data: {
+                    openid: wx.getStorageSync('openid')
+                  },
+                }, 10000);
+                console.log('十秒了')
+      
+                          })
+                //  let acceptTmpList = [];
+                //  for(let i = 0; i < tmpIds.length; i++ )
+                //  {
+                //     let tmpId = tmpIds[i];
+                //     if(res[tmpId] == "accept")
+                //     {
+                //       acceptTmpList.push(tmpId);
+                //     }
+                //   }
+                
+                  }
+                })
+              }
     let row = e.currentTarget.dataset.row
     let col = e.currentTarget.dataset.col
     wx.setStorage({
@@ -289,6 +401,30 @@ Page({
       camera:false,
       schedule:table
     })
+    let subscribe = wx.getStorageSync('subscribe')
+    if(!subscribe){
+      let tmpIds = [
+        "AuBm68rZSfwYpD5rfPmVzbASIAqLQpYMeljMuYfcAd4"
+        ];
+      wx.requestSubscribeMessage({
+        tmplIds: tmpIds,
+        success (res) {
+           let acceptTmpList = [];
+           for(let i = 0; i < tmpIds.length; i++ )
+           {
+              let tmpId = tmpIds[i];
+              if(res[tmpId] == "accept")
+              {
+                acceptTmpList.push(tmpId);
+              }
+            }
+            wx.setStorage({
+              data: true,
+              key: 'subscribe',
+            })
+            }
+          })
+        }
   },
   _openText(e) {
     this.setData({
@@ -305,6 +441,30 @@ Page({
     })
   },
   _openCourse(e){
+    let subscribe = wx.getStorageSync('subscribe')
+  if(!subscribe){
+    let tmpIds = [
+      "AuBm68rZSfwYpD5rfPmVzbASIAqLQpYMeljMuYfcAd4"
+      ];
+    wx.requestSubscribeMessage({
+      tmplIds: tmpIds,
+      success (res) {
+         let acceptTmpList = [];
+         for(let i = 0; i < tmpIds.length; i++ )
+         {
+            let tmpId = tmpIds[i];
+            if(res[tmpId] == "accept")
+            {
+              acceptTmpList.push(tmpId);
+            }
+          }
+          wx.setStorage({
+            data: true,
+            key: 'subscribe',
+          })
+          }
+        })
+      }
     this.setData({
       functionList: false
     })
@@ -326,6 +486,30 @@ Page({
     this.edit.showCourse();
   },
   _openAffair(e){
+    let subscribe = wx.getStorageSync('subscribe')
+  if(!subscribe){
+    let tmpIds = [
+      "AuBm68rZSfwYpD5rfPmVzbASIAqLQpYMeljMuYfcAd4"
+      ];
+    wx.requestSubscribeMessage({
+      tmplIds: tmpIds,
+      success (res) {
+         let acceptTmpList = [];
+         for(let i = 0; i < tmpIds.length; i++ )
+         {
+            let tmpId = tmpIds[i];
+            if(res[tmpId] == "accept")
+            {
+              acceptTmpList.push(tmpId);
+            }
+          }
+          wx.setStorage({
+            data: true,
+            key: 'subscribe',
+          })
+          }
+        })
+      }
     this.setData({
       functionList: false
     })
@@ -374,7 +558,6 @@ _success() {
   })
   console.log('你点击了确定');
   this.edit.hideCourse();
-
 },
 _success1() {
   let table= wx.getStorageSync('schedule')
@@ -384,6 +567,30 @@ _success1() {
   })
   console.log('你点击了确定');
   this.edit1.hideDate();
+  let subscribe = wx.getStorageSync('subscribe')
+  if(!subscribe){
+    let tmpIds = [
+      "AuBm68rZSfwYpD5rfPmVzbASIAqLQpYMeljMuYfcAd4"
+      ];
+    wx.requestSubscribeMessage({
+      tmplIds: tmpIds,
+      success (res) {
+         let acceptTmpList = [];
+         for(let i = 0; i < tmpIds.length; i++ )
+         {
+            let tmpId = tmpIds[i];
+            if(res[tmpId] == "accept")
+            {
+              acceptTmpList.push(tmpId);
+            }
+          }
+          wx.setStorage({
+            data: true,
+            key: 'subscribe',
+          })
+          }
+        })
+      }
 },
 /**
  * 左右滑动控制函数
@@ -409,153 +616,9 @@ _success1() {
     moveFlag = true
   },
   move2Right(){
-    var that = this
-    that.setData({
-      schedule:{
-        month:'3',
-        tableData:[
-          {
-            date:'14',
-            dateData:[
-              {type:'',itemName:'',user:'',time:'07:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'08:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'09:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'10:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'11:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'12:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'13:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'14:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'class',itemName:'语文',user:'李老师',time:'15:00',course:'',link:'',affair:'',location:'',status:'finished'},
-              {type:'',itemName:'',user:'',time:'16:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'17:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'18:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'19:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'20:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'21:00',course:'',link:'',affair:'',location:'',status:'empty'}
-            ]
-          },
-          {
-            date:'15',
-            dateData:[
-              {type:'',itemName:'',user:'',time:'07:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'08:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'09:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'10:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'class',itemName:'语文',user:'李老师',time:'11:00',course:'',link:'',affair:'',location:'',status:'unfinishClass'},
-              {type:'',itemName:'',user:'',time:'12:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'13:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'14:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'15:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'16:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'17:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'18:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'19:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'20:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'21:00',course:'',link:'',affair:'',location:'',status:'empty'}
-            ]
-          },
-          {
-            date:'16',
-            dateData:[
-              {type:'',itemName:'',user:'',time:'07:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'08:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'09:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'10:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'11:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'12:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'13:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'14:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'15:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'16:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'17:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'18:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'19:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'20:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'21:00',course:'',link:'',affair:'',location:'',status:'empty'}
-            ]
-          },
-          {
-            date:'17',
-            dateData:[
-              {type:'',itemName:'',user:'',time:'07:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'08:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'09:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'10:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'11:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'12:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'13:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'14:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'15:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'16:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'17:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'18:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'19:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'20:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'21:00',course:'',link:'',affair:'',location:'',status:'empty'}
-            ]
-          },
-          {
-            date:'18',
-            dateData:[
-              {type:'',itemName:'',user:'',time:'07:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'08:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'09:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'10:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'11:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'affair',itemName:'做饭',user:'',time:'12:00',course:'',link:'',affair:'',location:'',status:'unfinishAffair'},
-              {type:'',itemName:'',user:'',time:'13:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'14:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'15:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'16:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'17:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'18:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'19:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'20:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'21:00',course:'',link:'',affair:'',location:'',status:'empty'}
-            ]
-          },
-          {
-            date:'19',
-            dateData:[
-              {type:'',itemName:'',user:'',time:'07:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'08:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'09:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'10:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'11:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'12:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'13:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'14:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'15:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'16:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'17:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'18:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'19:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'20:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'21:00',course:'',link:'',affair:'',location:'',status:'empty'}
-            ]
-          },
-          {
-            date:'20',
-            dateData:[
-              {type:'',itemName:'',user:'',time:'07:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'08:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'09:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'10:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'11:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'12:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'13:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'14:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'15:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'16:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'17:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'18:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'19:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'20:00',course:'',link:'',affair:'',location:'',status:'empty'},
-              {type:'',itemName:'',user:'',time:'21:00',course:'',link:'',affair:'',location:'',status:'empty'}
-            ]
-          }
-        ]
-      },
+    let table= wx.getStorageSync('schedule')
+    this.setData({
+      schedule:table
     })
   },
   move2Left(){

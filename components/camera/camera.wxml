@@ -9,6 +9,7 @@
         <view class='wx-dialog-footer'>
             <view class='wx-dialog-btn' catchtap='_cancelEvent'>取消</view>
             <view class='wx-dialog-btn' bindtap="takePhoto">拍照</view>
+            <view class='wx-dialog-btn' bindtap="selectPhoto">本地图片</view>
         </view>
     </view>
 </view>

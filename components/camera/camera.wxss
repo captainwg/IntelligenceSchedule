@@ -81,6 +81,10 @@
   color: rgba(139,87,42,0.70);
 }
 
+.wx-dialog-footer .wx-dialog-btn:nth-of-type(3) {
+  color: rgba(139,87,42,0.70);
+}
+
 .wx-dialog-footer .wx-dialog-btn:nth-of-type(2):after {
   content: " ";
   position: absolute;

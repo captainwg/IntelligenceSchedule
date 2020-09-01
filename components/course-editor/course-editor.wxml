@@ -40,7 +40,7 @@
         <input type='text5' name="link" placeholder="请输入链接" value="{{link}}" bindinput="inputLink" auto-focus/>
       </view>
       <view>
-        <button bindtap='goBaidu' size="mini">点击跳转</button>
+        <button class="confirm" type="primary" bindtap='goBaidu' size="mini">链接跳转</button>
       </view>
     </view>
 

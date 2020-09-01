@@ -105,3 +105,11 @@
   border: 2rpx solid #ccc;
   border-radius: 88rpx;
 }
+.course-edit-content .confirm{
+  background: #8B572A;
+  border-radius: 3px;
+  font-family: PingFangSC-Regular;
+  font-size: 20rpx;
+  color: #FFFFFF;
+  margin-top: 45%;
+}

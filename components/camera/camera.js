@@ -64,8 +64,11 @@ Component({
         this.setData({
           src: res.tempImagePath
         })
+        console.log(this.data.src)
         const file = wx.getFileSystemManager()
         const picBase64 = file.readFileSync(res.tempImagePath,"base64")
+        // let path='../../images/testPic.jpg'
+        // const picBase64 = file.readFileSync(path,"base64")
         console.log(picBase64)
         console.log(res.tempImagePath)
         var that = this
@@ -79,7 +82,7 @@ Component({
             'content-type': 'application/json' // 默认值
           },
           success (res) {
-            console.log(res.data.text)
+            console.log(res.data)
             if(res.data.text.words_result){
               let resultSet = res.data.text.words_result
               resultSet.forEach((item)=>{
@@ -95,10 +98,11 @@ Component({
                   location:'',
                   status:'unfinishClass'
                 }
+                console.log(dataSet)
                 let date = item.top
                 let table= wx.getStorageSync('schedule')
                 table.tableData.forEach((item)=>{
-                  if(item.date===currentCol){
+                  if(item.date===date){
                     for(let i=0;i<item.dateData.length;i++){
                       if(item.dateData[i].time===time){
                         item.dateData[i]=dataSet
@@ -122,7 +126,73 @@ Component({
         })
       }
     })
-    this.triggerEvent("confirmEvent");
+  },
+  selectPhoto() {
+    var that = this
+    wx.chooseImage({
+      count: 1,
+      sizeType: ['original', 'compressed'],
+      sourceType: ['album', 'camera'],
+      success (res) {
+        // tempFilePath可以作为img标签的src属性显示图片
+        const tempFilePaths = res.tempFilePaths[0]
+        const file = wx.getFileSystemManager()
+        const picBase64 = file.readFileSync(tempFilePaths,"base64")
+        wx.request({
+          url: 'http://47.107.64.43:5009/getocr', 
+          data: {
+            img: picBase64
+          },
+          method:'POST',
+          header: {
+            'content-type': 'application/json' // 默认值
+          },
+          success (res) {
+            console.log(res.data)
+            if(res.data.text.words_result){
+              let resultSet = res.data.text.words_result
+              resultSet.forEach((item)=>{
+                console.log(item)
+                let dataSet = {
+                  type:'class',
+                  itemName:item.text,
+                  user:'',
+                  time:item.left,
+                  course:'1课时',
+                  link:'',
+                  affair:'',
+                  location:'',
+                  status:'unfinishClass'
+                }
+                let date = item.top.split('月')[1].split('日')[0]
+                let time =item.left
+                let table= wx.getStorageSync('schedule')
+                table.tableData.forEach((tableItem)=>{
+                  if(tableItem.date===date){
+                    for(let i=0;i<tableItem.dateData.length;i++){
+                      if(tableItem.dateData[i].time===time){
+                        tableItem.dateData[i]=dataSet
+                      }
+                    }
+                  }
+                })
+                console.log(table)
+                wx.setStorage({
+                  data: table,
+                  key: 'schedule',
+                })
+              })
+            }
+            console.log('调用成功')
+            that.triggerEvent("confirmEvent");
+          },
+          fail(error){
+            console.log(error)
+            console.log('调用失败')
+          }
+        })
+      }
+    })
   },
   error(e) {
     console.log(e.detail)
