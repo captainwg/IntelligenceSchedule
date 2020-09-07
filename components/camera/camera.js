@@ -139,7 +139,8 @@ Component({
         const file = wx.getFileSystemManager()
         const picBase64 = file.readFileSync(tempFilePaths,"base64")
         wx.request({
-          url: 'http://47.107.64.43:5009/getocr', 
+          // url: 'http://47.107.64.43:5009/getocr', 
+          url: 'https://542124141.xyz/classtable/getocr', 
           data: {
             img: picBase64
           },

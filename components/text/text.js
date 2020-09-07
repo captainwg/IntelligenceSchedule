@@ -67,7 +67,9 @@ Component({
     console.log(this.data.value)
     var that = this
     wx.request({
-      url: 'http://47.107.64.43:5009/getcourse', 
+      // url: 'http://47.107.64.43:5009/getcourse', 
+            url: 'https://542124141.xyz/classtable/getcourse', 
+
       data: {
         text: this.data.value
       },
