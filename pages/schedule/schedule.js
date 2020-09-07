@@ -540,7 +540,11 @@ Page({
 _error() {
   console.log('你点击了取消');
   this.edit.hideCourse();
-
+  wx.showToast({
+    title: '你点击了取消',
+    icon:'none',
+    duration:1000
+  })
 },
 _error1() {
   this.setData({
@@ -548,6 +552,11 @@ _error1() {
   })
   console.log('你点击了取消');
   this.edit1.hideDate();
+  wx.showToast({
+    title: '你点击了取消',
+    icon:'none',
+    duration:1000
+  })
 },
 //确认事件
 _success() {
@@ -558,39 +567,26 @@ _success() {
   })
   console.log('你点击了确定');
   this.edit.hideCourse();
+  wx.showToast({
+    title: '添加成功',
+    icon:'success',
+    duration:1000
+  })
 },
 _success1() {
   let table= wx.getStorageSync('schedule')
   this.setData({
     dateFlag:false,
-    schedule:table
+    schedule:table,
+    duration:1000
   })
   console.log('你点击了确定');
   this.edit1.hideDate();
-  let subscribe = wx.getStorageSync('subscribe')
-  if(!subscribe){
-    let tmpIds = [
-      "AuBm68rZSfwYpD5rfPmVzbASIAqLQpYMeljMuYfcAd4"
-      ];
-    wx.requestSubscribeMessage({
-      tmplIds: tmpIds,
-      success (res) {
-         let acceptTmpList = [];
-         for(let i = 0; i < tmpIds.length; i++ )
-         {
-            let tmpId = tmpIds[i];
-            if(res[tmpId] == "accept")
-            {
-              acceptTmpList.push(tmpId);
-            }
-          }
-          wx.setStorage({
-            data: true,
-            key: 'subscribe',
-          })
-          }
-        })
-      }
+  wx.showToast({
+    title: '添加成功',
+    icon:'success',
+    duration:1000
+  })
 },
 /**
  * 左右滑动控制函数
