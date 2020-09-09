@@ -396,10 +396,13 @@ Page({
   _confirmEvent(e) {
     //do something when cancle is clicked
     let table= wx.getStorageSync('schedule')
+    console.log(table)
+    this.setData({
+      schedule:table
+    })
     this.setData({
       text: false,
-      camera:false,
-      schedule:table
+      camera:false
     })
     let subscribe = wx.getStorageSync('subscribe')
     if(!subscribe){

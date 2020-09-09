@@ -105,6 +105,8 @@ Component({
                   if(item.date===date){
                     for(let i=0;i<item.dateData.length;i++){
                       if(item.dateData[i].time===time){
+                        console.log('当前日期：'+date)
+                        console.log('当前时间:'+time)
                         item.dateData[i]=dataSet
                       }
                     }
@@ -129,6 +131,7 @@ Component({
   },
   selectPhoto() {
     var that = this
+    let table= wx.getStorageSync('schedule')
     wx.chooseImage({
       count: 1,
       sizeType: ['original', 'compressed'],
@@ -166,22 +169,23 @@ Component({
                 }
                 let date = item.top.split('月')[1].split('日')[0]
                 let time =item.left
-                let table= wx.getStorageSync('schedule')
                 table.tableData.forEach((tableItem)=>{
                   if(tableItem.date===date){
                     for(let i=0;i<tableItem.dateData.length;i++){
                       if(tableItem.dateData[i].time===time){
+                        console.log('当前日期：'+date)
+                        console.log('当前时间:'+time)
                         tableItem.dateData[i]=dataSet
                       }
                     }
                   }
                 })
-                console.log(table)
+              })
+              console.log(table)
                 wx.setStorage({
                   data: table,
                   key: 'schedule',
                 })
-              })
             }
             console.log('调用成功')
             that.triggerEvent("confirmEvent");
